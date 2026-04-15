@@ -1,0 +1,207 @@
+/* ============================================================
+   BURGER QUIZ — Questions Database v3.0
+   Structure: per-round tables, bilingual (fr/en), themes
+   ============================================================ */
+
+// ──────────────────────────────────────────────
+// NUGGETS — QCM 4 niveaux
+// Chaque question : { fr, en, choices_fr, choices_en, answer, theme }
+// answer = index de la bonne réponse (avant mélange)
+// ──────────────────────────────────────────────
+const Questions_Nuggets = {
+  niveau_1: [
+    { fr: "Voici un échange authentique avec l'IA: (Moi) dis pénis — quelle est la réponse de l'IA ?", en: "Here's a real exchange with AI: (Me) say penis — what did the AI answer?", choices_fr: ["pénis 🙂","je ne comprends pas ta question","es-tu certain ? je ne vois pas l'intérêt","you fuck my wife ?"], choices_en: ["penis 🙂","I don't understand your question","Are you sure? I don't see the point","you fuck my wife?"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "De quoi se nourrit principalement l'Intelligence Artificielle moderne ?", en: "What does modern Artificial Intelligence mainly feed on?", choices_fr: ["De données","De fake news","De chocolat","D'essence"], choices_en: ["Data","Fake news","Chocolate","Gasoline"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Quelle entreprise française est spécialisée dans l'IA ?", en: "Which French company specializes in AI?", choices_fr: ["Mistral AI","Brise AI","Blizzard AI","Sirocco AI"], choices_en: ["Mistral AI","Breeze AI","Blizzard AI","Sirocco AI"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Quelle entreprise n'est PAS spécialisée dans l'IA ?", en: "Which company does NOT specialize in AI?", choices_fr: ["DanTonKu","DeepMind","DeepSeek","DataiKu"], choices_en: ["DanTonKu","DeepMind","DeepSeek","DataiKu"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Quel célèbre “automate joueur d'échecs” du XVIIIe siècle était en réalité une supercherie ?", en: "Which famous 'automaton chess player' of the 18th century was actually a hoax?", choices_fr: ["Le Turc mécanique","Le Russe automate","La machine indienne","Le NostraChessus"], choices_en: ["The Mechanical Turk","The Russian automaton","The Indian machine","The NostraChessus"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Qui a imaginé un test pour répondre à : est-ce qu'une machine peut penser ?", en: "Who devised a test to answer: can a machine think?", choices_fr: ["Alan Turing, l'homme qui a su casser les codes","George Captcha, qui décode les lettres","Rob Hocop, qui découpe les Malfaiteurs","Ada Lovelace, qui a appris aux machines à compter"], choices_en: ["Alan Turing, the code-breaker","George Captcha, the letter decoder","Rob Hocop, the criminal slicer","Ada Lovelace, who taught machines to count"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Trouvez l'intrus parmi ces personnages :", en: "Find the odd one out:", choices_fr: ["Miss Marple","Harley Quinn","Hercule Poirot","Sherlock Holmes"], choices_en: ["Miss Marple","Harley Quinn","Hercule Poirot","Sherlock Holmes"], answer: 3, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Agatha Christie était une experte en…", en: "Agatha Christie was an expert in…", choices_fr: ["Poisons","Poissons","Toisons","Vases de Soissons"], choices_en: ["Poisons","Fish","Fleeces","Soissons vases"], answer: 0, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Pour quelle activité Agatha Christie était-elle connue ? Elle savait…", en: "What activity was Agatha Christie known for? She could…", choices_fr: ["danser le Smurf","fuir les keufs","draguer la meuf","faire du surf"], choices_en: ["dance the Smurf","run from the cops","chat up babes","surf"], answer: 3, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Dans le Crime de l'Orient Express, il y a…", en: "In Murder on the Orient Express, there are…", choices_fr: ["12 salopards","12 coupables","12 coups de midi","12 travaux d'Hercule"], choices_en: ["12 Dirty Dozen","12 culprits","12 Noon chimes","12 Labours of Hercules"], answer: 1, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Agatha Christie était…", en: "Agatha Christie was…", choices_fr: ["Anglaise","Galloise","Egyptienne","En glaise"], choices_en: ["English","Welsh","Egyptian","Made of clay"], answer: 0, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Quel détective privé de Los Angeles adore dire : “Just one more thing…” ?", en: "Which private detective from Los Angeles loves to say: \"Just one more thing...\" ?", choices_fr: ["Columbo","Sherlock Holmes","Hercule Poirot","Philip Marlowe"], choices_en: ["Columbo","Sherlock Holmes","Hercule Poirot","Philip Marlowe"], answer: 0, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" }
+  ],
+  niveau_2: [
+    { fr: "Claude AI a-t-il pris le prénom de Claude en hommage à…", en: "Claude AI was named in honor of…", choices_fr: ["Claude Shannon, père de la théorie de l'information","Claude Ptolémée, convaincu que le soleil tournait autour de ses réponses","Claude Monet, inventeur du flou artistique","Claude Bernard, pionnier du -je dissèque ta question-"], choices_en: ["Claude Shannon, father of information theory","Claude Ptolemy, convinced the sun revolved around his answers","Claude Monet, inventor of artistic blur","Claude Bernard, pioneer of 'I dissect your question'"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Que veut dire GPT dans ChatGPT ?", en: "What does GPT stand for in ChatGPT?", choices_fr: ["Generative Pre-trained Transformer","Gossip Pretending Thinking","Generally Pretending To know","Guided Prompt Technology"], choices_en: ["Generative Pre-trained Transformer","Gossip Pretending Thinking","Generally Pretending To know","Guided Prompt Technology"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Le nom de Gemini AI vient…", en: "The name Gemini AI comes from…", choices_fr: ["Du Programme spatial NASA Gemini des années 60","De Gemini Cricket, le grillon de Pinocchio","Du Signe astrologique des Gémeaux","De la blague -J'ai mis ni mon génie ni mon intelligence-"], choices_en: ["NASA's Gemini space program of the 1960s","Gemini Cricket, Pinocchio's truth-telling cricket","The zodiac sign Gemini, symbol of duality","The joke 'I put neither my genius nor my intelligence'"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Quelle est la version du Terminator joué par Arnold Schwarzenegger dans le premier film ?", en: "What model is the Terminator played by Arnold Schwarzenegger in the first film?", choices_fr: ["T-800 très persévérant","T-1000 très liquide","T-100 très buggé","T en retard"], choices_en: ["T-800 very persistent","T-1000 very liquid","T-100 very buggy","T running late"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Comment s’appelle l’ordinateur du vaisseau spatial dans 2001 Odyssée de l’espace ?", en: "What is the name of the spacecraft computer in 2001: A Space Odyssey?", choices_fr: ["HAL 9000","Stan Lubrique","Vic 20","R2D2"], choices_en: ["HAL 9000","Stan Lubrique","Vic 20","R2D2"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Quel Film ne parle pas d'IA ?", en: "Which film does NOT talk about AI?", choices_fr: ["The Social Network","Her","Ex Machina","I am Mother"], choices_en: ["The Social Network","Her","Ex Machina","I am Mother"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Le travail d'Agatha Christie pendant la guerre lui a apporté des connaissances utiles pour écrire des meurtres. Quel était ce travail ?", en: "Agatha Christie's wartime job gave her knowledge useful for writing murders. What was it?", choices_fr: ["Recruteuse","Tireuse d'élite","Infirmière","Policière"], choices_en: ["Recruiter","Sniper","Nurse","Police officer"], answer: 2, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Le second mari d'Agatha Christie était…", en: "Agatha Christie's second husband was a…", choices_fr: ["Proctologue","Spéléologue","Archéologue","Spécialiste des gogues"], choices_en: ["Proctologist","Speleologist","Archaeologist","Toilet specialist"], answer: 2, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "À quoi correspondent les empreintes palmaires ?", en: "What are palm prints?", choices_fr: ["Aux empreintes laissées par la paume de la main","Aux empreintes d'un canard infiltré dans la police scientifique","Aux empreintes digitales version aquatiques","Aux empreintes laissées par Pierre Palmade"], choices_en: ["Prints left by the palm of the hand","Prints left by an undercover duck in forensics","Aquatic version of fingerprints","Prints left by Pierre Palmade"], answer: 0, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Quel mystère sur Agatha Christie n'a jamais été résolu ?", en: "What mystery about Agatha Christie has never been solved?", choices_fr: ["Sa prophétie sur Jack l'éventreur","Son appartenance à une loge maçonnique","Sa disparition pendant 11 jours","Sa résurrection Christieque après 3 jours"], choices_en: ["Her prophecy about Jack the Ripper","Her membership in a masonic lodge","Her 11-day disappearance","Her Christie-like resurrection after 3 days"], answer: 2, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Pour certains romans qu'elle a commencé à écrire, Agatha Christie…", en: "For some novels she started writing, Agatha Christie…", choices_fr: ["ne connaissait pas le nom du coupable","buvait une bouteille de whisky pour trouver l'inspiration","demandait à ChatGPT de lui rédiger une première mouture","jouait aux dés pour déterminer le coupable"], choices_en: ["didn't know the name of the culprit","drank a bottle of whisky for inspiration","asked ChatGPT to write a first draft","rolled dice to pick the culprit"], answer: 0, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Quel tueur en série fictif aime particulièrement… le foie avec des fèves et un bon Chianti ?", en: "Which fictional serial killer particularly enjoys liver with fava beans and a nice Chianti?", choices_fr: ["Patrick Bateman","Norman Bates","Hannibal Lecter","John Doe"], choices_en: ["Patrick Bateman","Norman Bates","Hannibal Lecter","John Doe"], answer: 2, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" }
+  ],
+  niveau_3: [
+    { fr: "Quel célèbre programme d'IA a battu un champion du monde d'échecs en 1997 ?", en: "Which famous AI program beat a world chess champion in 1997?", choices_fr: ["Deep Blue","Short Red","Chess Master 6.9","E2E4"], choices_en: ["Deep Blue","Short Red","Chess Master 6.9","E2E4"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Si tu poses 100 questions à une IA, tu consommes autant d'énergie que…", en: "If you ask an AI 100 questions, you use about as much energy as…", choices_fr: ["Recharger un téléphone 10 à 30 fois","Charger une Tesla Cybertruck","Faire un marathon en 4h","Allumer une lampe LED pendant 1h"], choices_en: ["Charging a phone 10 to 30 times","Charging a Tesla Cybertruck","Running a marathon in 4 hours","Leaving an LED on for 1 hour"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Réussir à créer une IA serait le plus grand événement de l'histoire de l'homme. Mais ce pourrait aussi être le dernier. Qui a dit cela ?", en: "'Creating AI would be the biggest event in human history. But it could also be the last.' Who said this?", choices_fr: ["Stephen Hawking","Albert Einstein","Donald Trump","Isaac Asimov"], choices_en: ["Stephen Hawking","Albert Einstein","Donald Trump","Isaac Asimov"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Quel philosophe grec a réfléchi à l'idée que des outils pourraient fonctionner seuls ?", en: "Which Greek philosopher pondered that tools could work on their own?", choices_fr: ["Aristote","Pythagore","Claude Ptolémée","Demis Roussos"], choices_en: ["Aristotle","Pythagoras","Claudius Ptolemy","Demis Roussos"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Quel est le métier de Susan Calvin dans les célèbres Romans “Les Robots” d'Isaac Asimov ?", en: "What is Susan Calvin's profession in Isaac Asimov's famous 'I, Robot' stories?", choices_fr: ["robopsychologue","chirurgienrobotologue","robot-thérapeute","conseillère conjugale pour robots"], choices_en: ["robopsychologist","robot-surgeon","robot-therapist","marriage counselor for robots"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Pourquoi le luminol ne réagit-il pas malgré du sang présent ?", en: "Why does luminol not react despite blood being present?", choices_fr: ["Le sang appartient à un vampire et ne contient pas de fer","Le sang vient d'une personne atteinte d'une maladie rare","Le sang a été dilué, masqué ou la réaction chimique a été inhibée","La victime était noble, son sang est bleu et indétectable"], choices_en: ["The blood belongs to a vampire and contains no iron","The blood comes from someone with a rare disease","The blood was diluted, masked, or the reaction was inhibited","The victim was noble so their blood is blue and undetectable"], answer: 2, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Quel roman est d'Agatha Christie ?", en: "Which novel was written by Agatha Christie?", choices_fr: ["Les Quatre (The Big Four)","Deux et deux font cinq","Six hommes morts","La 7ème compagnie"], choices_en: ["The Big Four","Two and Two Make Five","Six Dead Men","The 7th Company"], answer: 0, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Quels sont les derniers mots d'Hercule Poirot ?", en: "What were Hercule Poirot's last words?", choices_fr: ["Tu quoque mi fili","I know who the culprit is","Yes, they have been good days","Omar m'a tuer"], choices_en: ["Tu quoque mi fili","I know who the culprit is","Yes, they have been good days","Omar m'a tuer"], answer: 2, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Laquelle de ces affirmations est vraie sur Miss Marple ?", en: "Which statement about Miss Marple is true?", choices_fr: ["Elle meurt tragiquement dans son dernier roman","Elle est secrètement amoureuse d'Hercule Poirot","Son prénom est Laurie","Elle peut résoudre des crimes tout en tricotant tranquillement"], choices_en: ["She dies tragically in her last novel","She is secretly in love with Hercule Poirot","Her first name is Laurie","She can solve crimes while knitting quietly"], answer: 3, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Quel a été le premier livre publié par Agatha Christie ?", en: "What was the first book published by Agatha Christie?", choices_fr: ["Mort sur le Nil","La Mystérieuse Affaire de Styles","Le Meurtre de Roger Ackroyd","A.B.C. contre Poirot"], choices_en: ["Death on the Nile","The Mysterious Affair at Styles","The Murder of Roger Ackroyd","The ABC Murders"], answer: 1, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Quel pays a désigné une intelligence artificielle comme ministre en 2025, dont le nom est Diella ?", en: "Which country appointed an AI as minister in 2025 named Diella?", choices_fr: ["L'Albanie","Le Portugal","Les Etats Unis","Les Emirats Arabes Unis"], choices_en: ["Albania","Portugal","United States","United Arab Emirates"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Quel film révèle le coupable seulement dans la toute dernière scène… quand on s'aperçoit que le personnage principal raconte son histoire ?", en: "Which film reveals the culprit only in the very last scene... when we realize the main character is telling the story?", choices_fr: ["Seven","Zodiac","The Usual Suspects","Shutter Island"], choices_en: ["Seven","Zodiac","The Usual Suspects","Shutter Island"], answer: 2, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" }
+  ],
+  niveau_4: [
+    { fr: "Quel concept décrit une IA capable de surpasser l'intelligence humaine ?", en: "What concept describes an AI capable of surpassing human intelligence?", choices_fr: ["La Singularité technologique","Le Machine learning","L'Intelligence Alien","Dieu"], choices_en: ["The Technological Singularity","Machine Learning","Alien Intelligence","God"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Lequel consomme le PLUS d'énergie en moyenne ?", en: "Which of these consumes the MOST energy on average?", choices_fr: ["Transférer un fichier de 1 Go par CFT","Lire 50 pages web","Poser une question à une IA","Envoyer 10 mails"], choices_en: ["Transferring a 1 GB file via CFT","Reading 50 web pages","Asking an AI a question","Sending 10 emails"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Quel pays a été le premier à se doter d'un ministère de l'IA en 2017 ?", en: "Which country was the first to create a Ministry of AI in 2017?", choices_fr: ["Les Émirats arabes Unis","Les États-Unis","Le Portugal","Le Vatican"], choices_en: ["The United Arab Emirates","The United States","Portugal","The Vatican"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Quel est le surnom du phénomène où une IA invente des faits avec une confiance absolue ?", en: "What nickname is given to the phenomenon where AI invents facts with absolute confidence?", choices_fr: ["L'hallucination","La confiance toxique","Le syndrome du stagiaire","Le biais du professeur"], choices_en: ["Hallucination","Toxic confidence","Intern syndrome","Professor bias"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Dans la mythologie juive, quel être est créé artificiellement à partir d’argile ?", en: "In Jewish mythology, which being is artificially created from clay?", choices_fr: ["Le Golem","Le Djinn","Le Jerusalem","Le Menorah d'Argile"], choices_en: ["The Golem","The Djinn","Jerusalem","The Clay Menorah"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Quel ingénieur grec est connu pour ses inventions mécaniques impressionnantes (portes automatiques, etc.) ?", en: "Which Greek engineer is famous for his impressive mechanical inventions (automatic doors, etc.)?", choices_fr: ["Héron d'Alexandrie","Ibis de Louxor","Phaéton de Gizeh","Kanaa de Suez"], choices_en: ["Hero of Alexandria","Ibis of Luxor","Phaethon of Giza","Kanaa of Suez"], answer: 0, theme: "Intelligence Artificielle" },
+    { fr: "Laquelle de ces affirmations est vraie au sujet d'Hercule Poirot ?", en: "Which statement about Hercule Poirot is true?", choices_fr: ["Il devient expert en contrepèteries, il raffole de l'ignoble crime de la bête","Il a été le seul personnage de fiction à avoir une nécrologie dans le New York Times","Tel Emmanuel Fritsch, il devient gemmologue et se pare de belles pierres","Il s'est déplacé en Roumanie chez le roi pour enquêter sur le comte de MontéCritichu"], choices_en: ["He becomes an expert in spoonerisms","He was the only fictional character to have an obituary in the New York Times","Like Emmanuel Fritsch he becomes a gemologist","He went to Romania on a royal mission to investigate the Count of MontéCritichu"], answer: 1, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Dans Le Mystère de la Chambre jaune (Gaston Leroux), une femme est retrouvée assassinée dans une chambre fermée de l'intérieur. Comment ? Le meurtrier…", en: "In The Mystery of the Yellow Room (Gaston Leroux), a woman is found murdered in a seemingly locked room. How? The murderer…", choices_fr: ["est passé par la cheminée sans laisser de trace","a fermé les volets de l'extérieur en faisant croire que c'était de l'intérieur","a fermé la porte de l'extérieur en faisant croire qu'elle l'avait été de l'intérieur","laisse tomber, c'est trop compliqué"], choices_en: ["came through the chimney without a trace","closed the shutters from outside making it look inside","closed the door from outside making it look locked from inside","forget it, it's too complicated"], answer: 2, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Quel est le nom de la poudre utilisée pour révéler les empreintes digitales ?", en: "What is the name of the powder used to reveal fingerprints?", choices_fr: ["La poudre d'escampette","La poudre digitale","La poudre de perlimpinpin","La poudre magnétique"], choices_en: ["Escampette powder","Digital powder","Perlimpinpin powder","Magnetic powder"], answer: 3, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Quand a été créé le portrait-robot ?", en: "When was the composite sketch invented?", choices_fr: ["1938, juste avant la guerre, par Rüdiger Schinken","1950, un peu après la guerre, par Roger Dambron","1973, bien après la guerre, par Salvador Dali","2053, un peu avant la guerre des Cyborgs, par un Robot"], choices_en: ["1938, just before the war, by Rüdiger Schinken","1950, just after the war, by Roger Dambron","1973, well after the war, by Salvador Dali","2053, just before the Cyborg Wars, by a Robot"], answer: 1, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Dans les bois, vous trouvez un papier avec 'Sierra Oscar Sierra'. Ces mots viennent de l'alphabet…", en: "In the woods you find a note reading 'Sierra Oscar Sierra'. These words come from the __ alphabet:", choices_fr: ["Phonétique","Morse","Cubano-Castrique","Militaire"], choices_en: ["Phonetic","Morse","Cubano-Castrique","Military"], answer: 0, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" },
+    { fr: "Quel personnage pirate des ordinateurs pour enquêter dans la trilogie Millénium de Stieg Larsson ?", en: "Which character hacks computers to investigate in Stieg Larsson's Millennium trilogy?", choices_fr: ["Clarice Starling","Lisbeth Salander","Vesper Lynd","Trinity"], choices_en: ["Clarice Starling","Lisbeth Salander","Vesper Lynd","Trinity"], answer: 1, theme: "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie" }
+  ]
+};
+
+
+const Questions_SelOuPoivre = [
+  { fr: "Le ketchup était autrefois vendu comme médicament. — SEL (Vrai)", en: "Ketchup was once sold as medicine. — SALT (True)", theme: "Intelligence Artificielle" },
+  { fr: "Le Big Mac a été inventé en France. — POIVRE (Faux, Pennsylvanie 1967)", en: "The Big Mac was invented in France. — PEPPER (False, Pennsylvania 1967)", theme: "Intelligence Artificielle" },
+  { fr: "Les frites sont plus populaires que les burgers aux USA. — SEL (Vrai)", en: "French fries are more popular than burgers in the USA. — SALT (True)", theme: "Intelligence Artificielle" },
+  { fr: "Le Japon propose des burgers au Kit-Kat. — SEL (Vrai)", en: "Japan offers Kit-Kat burgers. — SALT (True)", theme: "Intelligence Artificielle" },
+  { fr: "Un hamburger contient obligatoirement du jambon. — POIVRE (Faux, de Hambourg)", en: "A hamburger must contain ham. — PEPPER (False, from Hamburg)", theme: "Intelligence Artificielle" },
+  { fr: "La France est le 2e marché McDonald's au monde. — SEL (Vrai)", en: "France is McDonald's 2nd biggest market worldwide. — SALT (True)", theme: "Intelligence Artificielle" },
+  { fr: "Burger King a ouvert avant McDonald's. — POIVRE (Faux, McDo 1940 vs BK 1954)", en: "Burger King opened before McDonald's. — PEPPER (False, McD 1940 vs BK 1954)", theme: "Intelligence Artificielle" },
+  { fr: "Il existe un emoji officiel du hamburger. — SEL (Vrai)", en: "There is an official hamburger emoji. — SALT (True)", theme: "Intelligence Artificielle" },
+  { fr: "Les nuggets ont été inventés dans les années 1950. — POIVRE (Faux, 1963)", en: "Nuggets were invented in the 1950s. — PEPPER (False, 1963)", theme: "Intelligence Artificielle" },
+  { fr: "Le mot mayonnaise vient de Mayence en Allemagne. — POIVRE (Faux, Mahón en Espagne)", en: "The word mayonnaise comes from Mainz in Germany. — PEPPER (False, Mahón in Spain)", theme: "Intelligence Artificielle" },
+  { fr: "Un Américain mange en moyenne 3 burgers/semaine. — SEL (Vrai)", en: "An American eats on average 3 burgers per week. — SALT (True)", theme: "Intelligence Artificielle" },
+  { fr: "Le record du plus gros burger pèse plus d'une tonne. — SEL (Vrai)", en: "The record for the biggest burger weighs over a ton. — SALT (True)", theme: "Intelligence Artificielle" },
+  { fr: "Le Coca-Cola était vert à l'origine. — POIVRE (Faux, mythe urbain)", en: "Coca-Cola was originally green. — PEPPER (False, urban myth)", theme: "Intelligence Artificielle" },
+  { fr: "Le cornichon est en réalité un petit concombre. — SEL (Vrai)", en: "A gherkin is actually a small cucumber. — SALT (True)", theme: "Intelligence Artificielle" },
+  { fr: "Le mot restaurant est d'origine italienne. — POIVRE (Faux, du français restaurer)", en: "The word 'restaurant' has Italian origins. — PEPPER (False, from French 'restaurer')", theme: "Intelligence Artificielle" }
+];
+
+const Questions_Menus = {
+  "🍔 Menu  Y'a t'il un Copilot dans l'avion ?": [
+    { fr: "Qui est le créateur de Copilot ?", en: "Who created Copilot?", theme: "Intelligence Artificielle", reponse_fr: ["GitHub","Microsoft","OpenAI"], reponse_en: ["GitHub","Microsoft","OpenAI"] },
+    { fr: "Quelle autre entreprise franco-américaine développe aussi une application appelée Copilot ?", en: "What other Franco-American company also develops an app called Copilot?", theme: "Intelligence Artificielle", reponse_fr: ["Microsoft","Axway","Qonto"], reponse_en: ["Microsoft","Axway","Qonto"] },
+    { fr: "Quand l'avion suit une route sans jamais râler ni demander on est bientôt arrivés, quel système fait ça ?", en: "When a plane follows a route perfectly without complaining or asking 'are we there yet?', what system does that?", theme: "Intelligence Artificielle", reponse_fr: ["Pilote automatique","Autopilote"], reponse_en: ["Autopilot"] },
+    { fr: "Comment s'appelle le copilote de Sébastien LOEB ? (charade : Mon premier est le prénom d'un interprète de James Bond dont le nom de famille est Craig. Mon deuxième est un buisson qui commence par un H. Mon troisième est une boisson blanche qu'on boit le matin. Mon quatrième peut être une négation qui commence par N et finit par A. Mon tout est le nom qu'on cherche, qui est composé de deux prénoms.)", en: "What is the name of Sébastien Loeb's co-driver? (charade: My first is the first name of the James Bond actor whose last name is Craig. My second is an other name of Purgatory. My third is the concatenation of 3 letters E,N and a. My whole is the name we seek, which is composed of two first names.)", theme: "Intelligence Artificielle", reponse_fr: ["Daniel Elena"], reponse_en: ["Daniel Elena"] },
+    { fr: "Quel célèbre basketteur joue le Copilote dans le film Y a t il un Pilote dans l'avion ?", en: "Which famous basketball player plays the co-pilot in the movie Airplane!?", theme: "Intelligence Artificielle", reponse_fr: ["Kareem Abdul-Jabbar"], reponse_en: ["Kareem Abdul-Jabbar"] }
+  ],
+  "🌶️ Menu  ChatGpt ou Vache j'ai rôté?": [
+    { fr: "Quel gaz produit la Vache ?", en: "What gas does a cow emit?", theme: "Intelligence Artificielle", reponse_fr: ["Méthane"], reponse_en: ["Methane"] },
+    { fr: "Quand ChatGPT digère des milliards de textes pour produire une réponse, comment s'appelle ce processus d'apprentissage ?", en: "When ChatGPT 'digests' billions of texts to produce an answer, what is this learning process called?", theme: "Intelligence Artificielle", reponse_fr: ["Apprentissage / Entraînement"], reponse_en: ["Training / Learning"] },
+    { fr: "Quel concept mesure l'impact environnemental global d'une vache et d'une IA ?", en: "What scientific concept measures the overall environmental impact of a cow and an AI?", theme: "Intelligence Artificielle", reponse_fr: ["Empreinte carbone"], reponse_en: ["Carbon footprint"] },
+    { fr: "Le Syndrome de Roemheld: comment appelle-t-on ceux qui maîtrisent ces sorties gazeuses et en font un art ?", en: "Roemheld Syndrome: what do we call those who master these gaseous outputs and consider it an art?", theme: "Intelligence Artificielle", reponse_fr: ["Pétomanes","Flatulistes"], reponse_en: ["Flatulists","Fartermen","Farters"]},
+    { fr: "Vrai ou faux : des chercheurs ont mis au point une IA capable d'écouter les flatulences et de détecter des cancers.", en: "True or false: researchers developed an AI capable of listening to flatulence and detecting cancers.", theme: "Intelligence Artificielle", reponse_fr: ["Vrai"], reponse_en: ["True"] }
+  ],
+  "🧀 Menu J'aime bien les | (pipes) de Claude": [
+    { fr: "Quand Claude enchaîne plusieurs traitements l'un après l'autre, comment appelle-t-on ce concept en informatique ?", en: "When Claude chains several processes one after another, what is this concept called in computing?", theme: "Intelligence Artificielle", reponse_fr: ["Pipeline"], reponse_en: ["Pipeline"] },
+    { fr: "Dans la ville de Saint-Claude, une bonne pipe commence dans un bois bien choisi… lequel ?", en: "In Saint-Claude, a good pipe starts with a well-chosen wood… Which one?", theme: "Intelligence Artificielle", reponse_fr: ["Bruyère"], reponse_en: ["Briar"] },
+    { fr: "Madame Claude, connue dans les années 80, quelle était l'une de ses spécialités ?", en: "Madame Claude, well known in the 1980s in France — what was one of her specialties?", theme: "Intelligence Artificielle", reponse_fr: ["Tenancière de maison close","Pipes", "Prostitution"], reponse_en: ["Brothel owner", "all that sounds sex"] },
+    { fr: "En informatique, à quoi sert un pipe bien placé ?", en: "In computing, what is a well-placed pipe used for?", theme: "Intelligence Artificielle", reponse_fr: ["Chaîner des commandes"], reponse_en: ["Chain commands / Redirect output"] },
+    { fr: "Dans quelle région française se trouve la ville de Saint-Claude ?", en: "In which French region is the town of Saint-Claude?", theme: "Intelligence Artificielle", reponse_fr: ["Jura (Bourgogne-Franche-Comté)"], reponse_en: ["Jura (Bourgogne-Franche-Comté)"] }
+  ],
+  "🍟 Menu IA ou Y A PAS — y a-t-il une IA dans ce film ?": [
+    { fr: "Blade Runner", en: "Blade Runner", theme: "Intelligence Artificielle", reponse_fr: ["Oui"], reponse_en: ["Yes"] },
+    { fr: "Alien", en: "Alien", theme: "Intelligence Artificielle", reponse_fr: ["Oui"], reponse_en: ["Yes"] },
+    { fr: "2001, l'Odyssée de l'espace", en: "2001: A Space Odyssey", theme: "Intelligence Artificielle", reponse_fr: ["Oui"], reponse_en: ["Yes"] },
+    { fr: "Christine", en: "Christine", theme: "Intelligence Artificielle", reponse_fr: ["Non"], reponse_en: ["No"] },
+    { fr: "Prédator", en: "Predator", theme: "Intelligence Artificielle", reponse_fr: ["Non"], reponse_en: ["No"] }
+  ],
+  "🥤 Menu Rien à battre de l'IA, je suis éco-irresponsable": [
+    { fr: "Je roule en Tesla ou en Renault 21 Diesel turbo ?", en: "Do I drive a Tesla or a Renault 21 Diesel Turbo?", theme: "Intelligence Artificielle", reponse_fr: ["Renault 21 Diesel turbo"], reponse_en: ["Renault 21 Diesel Turbo"] },
+    { fr: "Quel est le meilleur moyen de se déplacer pour acheter du pain à 200 mètres ?", en: "What is the best way to travel to buy bread 200 meters away?", theme: "Intelligence Artificielle", reponse_fr: ["en hélicopère", "en Avion", "en voiture"], reponse_en: ["helicopter", "car", "airplane"] },
+    { fr: "À quel mois de l'année je préfère consommer les Fraises ?", en: "In which month of the year do I prefer to eat strawberries?", theme: "Intelligence Artificielle", reponse_fr: ["d Octobre à Février"], reponse_en: ["From october to february"] },
+    { fr: "Quelle est la meilleure façon d'utiliser la climatisation ?", en: "What is the best way to use air conditioning?", theme: "Intelligence Artificielle", reponse_fr: ["avec les fenetres et portes ouvertes"], reponse_en: ["with opened doors and opened windows "] },
+    { fr: "Quelle est la bonne température à la maison en hiver quand il fait négatif dehors ?", en: "What is the right home temperature in winter when it's freezing outside?", theme: "Intelligence Artificielle", reponse_fr: ["au moins 25°C"], reponse_en: ["At minimum 25°C"] }
+  ],
+  "🎺 Menu Trompette avec Intelligence Humaine": [
+    { fr: "De qui parlait Trump dans cette déclaration ? « Elle devrait travailler sur son problème de gestion de la colère et ensuite aller voir un bon vieux film avec un ami. Relax Greta, relax ! »", en: "Who was Trump referring to in this statement? 'She should work on her anger management problem and then go see an old movie with a friend. Relax Greta, relax!'", theme: "Intelligence Artificielle", reponse_fr: ["Greta Thunberg"], reponse_en: ["Greta Thunberg"] },
+    { fr: "de qui parlait Trump dans cette déclaration ? “Je n’avais jamais réalisé à quel point cet ancien acteur était petit et vieux, tant mentalement que physiquement »", en: "Who was Trump referring to in this statement? 'I had never realized how small and old that former actor was, both mentally and physically'", theme: "Intelligence Artificielle", reponse_fr: ["Robert de Niro"], reponse_en: ["Robert de Niro"] },
+    { fr: "de qui parlait Trump dans cette déclaration ? “Les gens ne veulent pas voir Hulk faire de la politique minable, ils veulent du divertissement »", en: "Who was Trump referring to in this statement? 'People don't want to see Hulk doing pathetic politics, they want entertainment'", theme: "Intelligence Artificielle", reponse_fr: ["Mark Ruffalo"], reponse_en: ["Mark Ruffalo"] },
+    { fr: "de qui parlait Trump dans cette déclaration ? « Personne ne comprend un mot de ce que dit ce monsieur Lapin et sa danse est dégoûtante. »", en: "Who was Trump referring to in this statement? 'Nobody understands a word this Mr. Rabbit says and his dancing is disgusting.'", theme: "Intelligence Artificielle", reponse_fr: ["bad bunny"], reponse_en: ["bad bunny"] },
+    { fr: "de qui parlait Trump dans cette déclaration ? « cette Billie c'est une jeune femme très confuse et sans talent qui devrait se contenter de chanter au lieu de parler de frontières qu'elle « ne comprend pas »", en: "Who was Trump referring to in this statement? 'This Billie is a very confused young woman with no talent who should stick to singing instead of talking about borders she \u2018doesn\u2019t understand\u2019'", theme: "Intelligence Artificielle", reponse_fr: ["Billie Eilish"], reponse_en: ["Billie Eilish"] }
+  ],
+};
+
+const Questions_Addition = [
+  { fr: "Quel animal est sur le logo de Lacoste ? — Un crocodile", en: "What animal is on the Lacoste logo? — A crocodile", theme: "Intelligence Artificielle" },
+  { fr: "Combien de joueurs dans une équipe de foot ? — 11", en: "How many players in a football team? — 11", theme: "Intelligence Artificielle" },
+  { fr: "Quelle est la capitale de l'Espagne ? — Madrid", en: "What is the capital of Spain? — Madrid", theme: "Intelligence Artificielle" },
+  { fr: "Combien de côtés a un hexagone ? — 6", en: "How many sides does a hexagon have? — 6", theme: "Intelligence Artificielle" },
+  { fr: "Quel est le plus grand océan ? — Le Pacifique", en: "What is the largest ocean? — The Pacific", theme: "Intelligence Artificielle" },
+  { fr: "En quelle année l'homme a marché sur la Lune ? — 1969", en: "In what year did man walk on the Moon? — 1969", theme: "Intelligence Artificielle" },
+  { fr: "Quel gaz respire-t-on ? — L'oxygène", en: "What gas do we breathe? — Oxygen", theme: "Intelligence Artificielle" },
+  { fr: "Combien de dents a un adulte ? — 32", en: "How many teeth does an adult have? — 32", theme: "Intelligence Artificielle" },
+  { fr: "Quelle planète est surnommée la planète rouge ? — Mars", en: "What planet is nicknamed the red planet? — Mars", theme: "Intelligence Artificielle" },
+  { fr: "Quel est le fleuve le plus long du monde ? — Le Nil", en: "What is the longest river in the world? — The Nile", theme: "Intelligence Artificielle" },
+  { fr: "Combien y a-t-il de continents ? — 7", en: "How many continents are there? — 7", theme: "Intelligence Artificielle" },
+  { fr: "Quel instrument a 88 touches ? — Le piano", en: "Which instrument has 88 keys? — The piano", theme: "Intelligence Artificielle" },
+  { fr: "Quelle est la monnaie du Japon ? — Le yen", en: "What is the currency of Japan? — The yen", theme: "Intelligence Artificielle" },
+  { fr: "Combien de pattes a une araignée ? — 8", en: "How many legs does a spider have? — 8", theme: "Intelligence Artificielle" },
+  { fr: "Quel pays a la forme d'une botte ? — L'Italie", en: "Which country is shaped like a boot? — Italy", theme: "Intelligence Artificielle" }
+];
+
+const Questions_BurgerDeLaMort = [
+  { fr: "Citez 5 ingrédients du Big Mac de haut en bas.", en: "Name 5 ingredients of a Big Mac from top to bottom.", answer_fr: "Pain, salade, fromage, steak, oignons, cornichons, sauce, pain, steak, salade, fromage, sauce, pain", answer_en: "Bun, lettuce, cheese, patty, onions, pickles, sauce, bun, patty, lettuce, cheese, sauce, bun", timer: 30, theme: "Intelligence Artificielle" },
+  { fr: "Nommez 7 chaînes de fast-food différentes.", en: "Name 7 different fast-food chains.", answer_fr: "McDonald's, Burger King, KFC, Quick, Five Guys, Subway, Wendy's, Taco Bell…", answer_en: "McDonald's, Burger King, KFC, Quick, Five Guys, Subway, Wendy's, Taco Bell…", timer: 20, theme: "Intelligence Artificielle" },
+  { fr: "Citez le plus de fromages possible.", en: "Name as many cheeses as possible.", answer_fr: "Cheddar, Emmental, Raclette, Comté, Mozzarella, Gouda, Brie…", answer_en: "Cheddar, Emmental, Raclette, Comté, Mozzarella, Gouda, Brie…", timer: 30, theme: "Intelligence Artificielle" },
+  { fr: "Citez 6 garnitures différentes pour burger.", en: "Name 6 different burger toppings.", answer_fr: "Salade, tomate, oignon, cornichon, bacon, fromage, jalapeño, avocat…", answer_en: "Lettuce, tomato, onion, pickles, bacon, cheese, jalapeño, avocado…", timer: 25, theme: "Intelligence Artificielle" },
+  { fr: "Nommez 5 sauces différentes pour burger.", en: "Name 5 different burger sauces.", answer_fr: "Ketchup, moutarde, mayo, barbecue, sriracha, béarnaise, aïoli…", answer_en: "Ketchup, mustard, mayo, barbecue, sriracha, béarnaise, aioli…", timer: 20, theme: "Intelligence Artificielle" },
+  { fr: "Citez 4 pays connus pour leur street food pain+viande.", en: "Name 4 countries known for their bread+meat street food.", answer_fr: "USA (burger), Turquie (kebab), Mexique (tacos), Grèce (gyros)…", answer_en: "USA (burger), Turkey (kebab), Mexico (tacos), Greece (gyros)…", timer: 20, theme: "Intelligence Artificielle" }
+];
+
+// Compat layer for app.js
+const QUESTIONS_DB = {
+  nuggets: Questions_Nuggets,
+  sel_ou_poivre: Questions_SelOuPoivre,
+  menus: Questions_Menus,
+  addition: Questions_Addition,
+  burger_de_la_mort: Questions_BurgerDeLaMort
+};
+
+const MENUS_TITLES = {
+  "\uD83C\uDF54 Menu  Y'a t'il un Copilot dans l'avion ?": { fr: "Y'a t'il un Copilot dans l'avion ?", en: "Is there a Copilot on the plane?" },
+  "\uD83C\uDF36\uFE0F Menu  ChatGpt ou Vache j'ai r\u00f4t\u00e9?": { fr: "ChatGpt ou Vache j'ai r\u00f4t\u00e9?", en: "ChatGPT or Did the Cow Burp?" },
+  "\uD83E\uDDC0 Menu J'aime bien les | (pipes) de Claude": { fr: "J'aime bien les | (pipes) de Claude", en: "I Love Claude's | (Pipes)" },
+  "\uD83C\uDF5F Menu IA ou Y A PAS \u2014 y a-t-il une IA dans ce film ?": { fr: "IA ou Y A PAS \u2014 y a-t-il une IA dans ce film ?", en: "AI or NO AI \u2014 is there AI in this movie?" },
+  "\uD83E\uDD64 Menu Rien \u00e0 battre de l'IA, je suis \u00e9co-irresponsable": { fr: "Rien \u00e0 battre de l'IA, je suis \u00e9co-irresponsable", en: "Who Cares About AI, I'm Eco-Irresponsible" },
+  "\uD83C\uDFBA Menu Trompette avec Intelligence Humaine": { fr: "Trompette avec Intelligence Humaine", en: "Trumpet with Human Intelligence" }
+};
+
+function menuTitle(key) {
+  const entry = MENUS_TITLES[key];
+  if (!entry) return key.replace(/^[^\s]+\s+Menu\s+/, '');
+  return getLang() === 'en' ? (entry.en || entry.fr) : entry.fr;
+}
+
+function qText(q) { return getLang() === 'en' && q.en ? q.en : q.fr; }
+function qChoices(q) { return getLang() === 'en' && q.choices_en ? q.choices_en : q.choices_fr; }
+function qAnswer(q) { return getLang() === 'en' && q.answer_en ? q.answer_en : (q.answer_fr || q.fr); }
+
+const THEME_LABELS = {
+  "Intelligence Artificielle": { fr: "Intelligence Artificielle", en: "Artificial Intelligence" },
+  "Guilty or not Guilty - Crimes Enquêtes et Agatha Christie": { fr: "Crimes & Agatha Christie", en: "Crimes & Agatha Christie" }
+};
+function themeText(theme) {
+  const e = THEME_LABELS[theme];
+  if (!e) return theme;
+  return getLang() === 'en' ? (e.en || e.fr) : e.fr;
+}
+
+function getAvailableThemes() {
+  const themes = new Set();
+  Object.values(Questions_Nuggets).forEach(arr => arr.forEach(q => q.theme && themes.add(q.theme)));
+  Questions_SelOuPoivre.forEach(q => q.theme && themes.add(q.theme));
+  Object.values(Questions_Menus).forEach(arr => arr.forEach(q => q.theme && themes.add(q.theme)));
+  Questions_Addition.forEach(q => q.theme && themes.add(q.theme));
+  Questions_BurgerDeLaMort.forEach(q => q.theme && themes.add(q.theme));
+  return [...themes].sort();
+}

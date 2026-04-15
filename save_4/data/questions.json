@@ -1,0 +1,246 @@
+{
+  "nuggets": [
+    {
+      "question": "Quel est le nom du clown mascotte de McDonald's ?",
+      "answer": "Ronald McDonald",
+      "points": 1
+    },
+    {
+      "question": "Dans quel pays a été inventé le hamburger ?",
+      "answer": "États-Unis (ou Allemagne selon les sources)",
+      "points": 1
+    },
+    {
+      "question": "Combien de calories contient environ un Big Mac ?",
+      "answer": "Environ 540 calories",
+      "points": 1
+    },
+    {
+      "question": "Quel ingrédient donne sa couleur jaune à la moutarde ?",
+      "answer": "Le curcuma",
+      "points": 1
+    },
+    {
+      "question": "Comment s'appelle le sandwich signature de Burger King ?",
+      "answer": "Le Whopper",
+      "points": 1
+    },
+    {
+      "question": "De quel animal provient le bacon ?",
+      "answer": "Le porc",
+      "points": 1
+    },
+    {
+      "question": "Quel pays est le plus gros consommateur de fromage au monde ?",
+      "answer": "La France",
+      "points": 1
+    },
+    {
+      "question": "Quel légume est la base du ketchup ?",
+      "answer": "La tomate",
+      "points": 1
+    },
+    {
+      "question": "En quelle année a été fondé McDonald's ?",
+      "answer": "1940 (restaurant) / 1955 (franchise par Ray Kroc)",
+      "points": 1
+    },
+    {
+      "question": "Quel est le nom du burger avec deux steaks chez McDo ?",
+      "answer": "Le Double Cheese",
+      "points": 1
+    },
+    {
+      "question": "De quel pays viennent les frites ?",
+      "answer": "La Belgique",
+      "points": 1
+    },
+    {
+      "question": "Quel type de pain est utilisé pour un burger classique ?",
+      "answer": "Un pain brioché (bun)",
+      "points": 1
+    },
+    {
+      "question": "Quel est l'ingrédient principal de la sauce mayo ?",
+      "answer": "L'œuf (jaune d'œuf)",
+      "points": 1
+    },
+    {
+      "question": "Comment appelle-t-on un burger sans viande ?",
+      "answer": "Un veggie burger",
+      "points": 1
+    },
+    {
+      "question": "Quelle chaîne de fast-food utilise le slogan 'I'm lovin' it' ?",
+      "answer": "McDonald's",
+      "points": 1
+    },
+    {
+      "question": "Quel fromage est traditionnellement utilisé dans un cheeseburger ?",
+      "answer": "Le cheddar",
+      "points": 1
+    }
+  ],
+  "sel_ou_poivre": [
+    {
+      "question": "Le ketchup était autrefois vendu comme médicament.",
+      "answer": "sel",
+      "explanation": "Vrai ! Dans les années 1830, le ketchup de tomate était vendu comme remède contre la diarrhée."
+    },
+    {
+      "question": "Le Big Mac a été inventé en France.",
+      "answer": "poivre",
+      "explanation": "Faux ! Il a été inventé par Jim Delligatti en Pennsylvanie en 1967."
+    },
+    {
+      "question": "Les frites sont plus populaires que les burgers aux États-Unis.",
+      "answer": "sel",
+      "explanation": "Vrai ! Les Américains consomment environ 2 milliards de portions de frites par an."
+    },
+    {
+      "question": "Le Japon propose des burgers au kit-kat.",
+      "answer": "sel",
+      "explanation": "Vrai ! Le Kit Kat Burger a existé dans certains restaurants au Japon."
+    },
+    {
+      "question": "Un hamburger contient obligatoirement du jambon (ham).",
+      "answer": "poivre",
+      "explanation": "Faux ! Le nom vient de la ville de Hambourg en Allemagne."
+    },
+    {
+      "question": "La France est le 2ème marché de McDonald's dans le monde.",
+      "answer": "sel",
+      "explanation": "Vrai ! Après les États-Unis, la France est le plus gros marché de McDo."
+    },
+    {
+      "question": "Le premier Burger King a ouvert avant le premier McDonald's.",
+      "answer": "poivre",
+      "explanation": "Faux ! McDonald's (1940) est plus ancien que Burger King (1954)."
+    },
+    {
+      "question": "Il existe un emoji officiel du hamburger 🍔.",
+      "answer": "sel",
+      "explanation": "Vrai ! L'emoji hamburger existe depuis Unicode 6.0 en 2010."
+    },
+    {
+      "question": "Les nuggets de poulet ont été inventés dans les années 1950.",
+      "answer": "sel",
+      "explanation": "Vrai ! Robert C. Baker a inventé les nuggets de poulet en 1963 à l'université Cornell."
+    },
+    {
+      "question": "Le mot 'mayonnaise' vient de la ville de Mayence en Allemagne.",
+      "answer": "poivre",
+      "explanation": "Faux ! Il viendrait de Mahón, une ville de Minorque en Espagne."
+    },
+    {
+      "question": "Un Américain mange en moyenne 3 burgers par semaine.",
+      "answer": "sel",
+      "explanation": "Vrai ! Les Américains consomment environ 50 milliards de burgers par an."
+    },
+    {
+      "question": "Le record du monde du plus gros burger pèse plus d'une tonne.",
+      "answer": "sel",
+      "explanation": "Vrai ! Le record est détenu par un burger de plus de 900 kg au Minnesota."
+    }
+  ],
+  "menus": [
+    {
+      "question": "Parmi ces sauces, laquelle n'est PAS d'origine française ?",
+      "choices": ["Béarnaise", "Barbecue", "Hollandaise", "Béchamel"],
+      "answer": 1,
+      "points": 2
+    },
+    {
+      "question": "Quel est le burger le plus vendu au monde ?",
+      "choices": ["Le Whopper", "Le Big Mac", "Le Quarter Pounder", "Le Baconator"],
+      "answer": 1,
+      "points": 2
+    },
+    {
+      "question": "Combien de cornichons y a-t-il dans un Big Mac standard ?",
+      "choices": ["1", "2", "3", "4"],
+      "answer": 1,
+      "points": 2
+    },
+    {
+      "question": "Quel fast-food est surnommé 'BK' ?",
+      "choices": ["KFC", "Burger King", "Quick", "Five Guys"],
+      "answer": 1,
+      "points": 2
+    },
+    {
+      "question": "De quel pays vient la sauce sriracha ?",
+      "choices": ["Japon", "Corée", "Thaïlande", "Vietnam"],
+      "answer": 2,
+      "points": 2
+    },
+    {
+      "question": "Quelle est la température idéale pour cuire un steak de burger ?",
+      "choices": ["120°C", "150°C", "180°C", "220°C"],
+      "answer": 2,
+      "points": 2
+    },
+    {
+      "question": "Quel ingrédient NE fait PAS partie de la sauce Big Mac ?",
+      "choices": ["Moutarde", "Cornichons", "Wasabi", "Oignon"],
+      "answer": 2,
+      "points": 2
+    },
+    {
+      "question": "Quel est le fast-food le plus ancien encore en activité ?",
+      "choices": ["McDonald's", "White Castle", "KFC", "Burger King"],
+      "answer": 1,
+      "points": 2
+    },
+    {
+      "question": "Comment appelle-t-on un burger avec un œuf au plat ?",
+      "choices": ["Royal Burger", "Aussie Burger", "Egg Burger", "Morning Burger"],
+      "answer": 1,
+      "points": 2
+    },
+    {
+      "question": "Quel pays a inventé le kebab dans un pain ?",
+      "choices": ["Turquie", "Allemagne", "Grèce", "Liban"],
+      "answer": 1,
+      "points": 2
+    }
+  ],
+  "burger_de_la_mort": [
+    {
+      "question": "Citez 5 ingrédients du Big Mac dans l'ordre de haut en bas.",
+      "answer": "Pain, salade, fromage, steak, oignons, cornichons, sauce, pain, steak, salade, fromage, sauce, pain",
+      "points": 5,
+      "timer": 30
+    },
+    {
+      "question": "Nommez 7 chaînes de fast-food différentes en 20 secondes.",
+      "answer": "McDonald's, Burger King, KFC, Quick, Five Guys, Subway, Wendy's, Taco Bell, Pizza Hut, Domino's...",
+      "points": 5,
+      "timer": 20
+    },
+    {
+      "question": "En 30 secondes, citez le plus de fromages possible utilisables dans un burger.",
+      "answer": "Cheddar, Emmental, Raclette, Comté, Mozzarella, Blue Cheese, Gouda, Brie, Camembert, Gruyère...",
+      "points": 5,
+      "timer": 30
+    },
+    {
+      "question": "Citez 6 garnitures différentes qu'on peut mettre dans un burger.",
+      "answer": "Salade, tomate, oignon, cornichon, bacon, fromage, jalapeño, avocat, champignon, œuf...",
+      "points": 5,
+      "timer": 25
+    },
+    {
+      "question": "Nommez 5 sauces différentes qu'on peut mettre dans un burger.",
+      "answer": "Ketchup, moutarde, mayo, barbecue, sriracha, béarnaise, sauce burger, aïoli, relish, ranch...",
+      "points": 5,
+      "timer": 20
+    },
+    {
+      "question": "Citez 4 pays connus pour leur street food à base de pain et viande.",
+      "answer": "USA (burger), Turquie/Allemagne (kebab), Mexique (tacos), Grèce (gyros), Vietnam (bánh mì), Japon...",
+      "points": 5,
+      "timer": 20
+    }
+  ]
+}

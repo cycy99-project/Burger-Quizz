@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🍔 Burger Quiz - Les Animateurs</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ==================== ÉCRAN D'ACCUEIL ==================== -->
+  <div id="screen-welcome" class="screen active">
+    <div class="welcome-container">
+      <div class="lang-toggle-container" id="lang-toggle-welcome">
+        <button class="lang-btn" data-lang="fr" onclick="switchLang('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">🇬🇧 EN</button>
+      </div>
+      <div class="logo-burger">
+        <span class="bun-top">🍔</span>
+        <h1>BURGER QUIZ</h1>
+        <p class="subtitle" id="welcome-animateurs">Les Animateurs</p>
+      </div>
+      <div class="teams-preview" id="teams-preview">
+        <!-- filled dynamically by buildTeamsPreview() -->
+      </div>
+      <div class="welcome-buttons">
+        <button class="btn btn-primary btn-large" onclick="showScreen('screen-settings')">⚙️ Paramètres</button>
+        <button class="btn btn-secondary btn-large" id="btn-continue" onclick="continueGame()" disabled>▶️ Continuer la partie</button>
+        <button class="btn btn-accent btn-large" onclick="showThemePickModal()">🎬 LANCER LA PARTIE !</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal tirage au sort des joueurs -->
+  <div id="modal-player-draw" class="modal-overlay" style="display:none">
+    <div class="modal-content" style="max-width:520px;text-align:left;max-height:90vh;overflow-y:auto">
+      <h2 style="text-align:center;margin-bottom:6px">🎰 Tirage au sort des Joueurs</h2>
+      <p style="text-align:center;color:var(--color-text-dim);font-size:14px;margin-bottom:16px">Ajoutez les prénoms (2 à 30 participants). Appuyez sur Entrée ou cliquez + pour ajouter.</p>
+      <div id="player-fields-container" style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px"></div>
+      <button class="btn btn-secondary" onclick="addPlayerField()" style="width:100%;margin-bottom:16px">＋ Ajouter un participant</button>
+      <div style="display:flex;gap:10px;justify-content:center">
+        <button class="btn btn-secondary" onclick="document.getElementById('modal-player-draw').style.display='none'">Annuler</button>
+        <button class="btn btn-accent" onclick="runPlayerDraw()">🎲 Tirer au sort !</button>
+      </div>
+      <div id="player-draw-preview" style="display:none;margin-top:20px;padding-top:16px;border-top:1px solid #1a3a6e"></div>
+      <div id="player-draw-modal-btns" style="display:none;margin-top:14px;text-align:center">
+        <button class="btn btn-primary" onclick="confirmPlayerDraw()">✅ Valider et fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal sélection des thèmes -->
+  <div id="modal-theme-pick" class="modal-overlay" style="display:none">
+    <div class="modal-content" style="max-width:480px;text-align:left">
+      <h2 style="text-align:center;margin-bottom:8px">🎨 Choix des Thèmes</h2>
+      <p style="text-align:center;color:var(--color-text-dim);margin-bottom:20px;font-size:15px">Sélectionnez les thèmes à jouer. Si plusieurs sont cochés, les questions de tous ces thèmes seront mélangées.</p>
+      <div id="modal-themes-container" style="display:flex;flex-direction:column;gap:14px;margin-bottom:24px">
+        <!-- filled dynamically by showThemePickModal() -->
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center">
+        <button class="btn btn-secondary" onclick="document.getElementById('modal-theme-pick').style.display='none'">Annuler</button>
+        <button class="btn btn-accent btn-large" onclick="applyThemesAndStart()">🎬 Lancer la partie !</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal confirmation nouvelle partie -->
+  <div id="modal-confirm" class="modal-overlay" style="display:none">
+    <div class="modal-content" style="max-width:420px;text-align:center">
+      <h2>⚠️ Partie en cours</h2>
+      <p style="margin:12px 0 24px;font-size:16px">Une partie est déjà en cours.<br>Voulez-vous vraiment tout recommencer à zéro ?</p>
+      <div style="display:flex;gap:12px;justify-content:center">
+        <button class="btn btn-secondary btn-large" onclick="closeConfirmModal()">Non, annuler</button>
+        <button class="btn btn-accent btn-large" onclick="closeConfirmModal(); startGame()">Oui, nouvelle partie !</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal tirage au sort ex-aequo menus -->
+  <div id="modal-tiebreak" class="modal-overlay" style="display:none">
+    <div class="modal-content draw-modal" style="max-width:500px;text-align:center">
+      <h2>🎰 Ex-aequo !</h2>
+      <p id="tiebreak-desc" style="margin-bottom:18px;color:var(--color-text-dim)"></p>
+      <div class="tiebreak-wheel-container">
+        <canvas id="tiebreak-canvas" width="280" height="280"></canvas>
+        <div class="tiebreak-pointer">▼</div>
+      </div>
+      <p id="tiebreak-result" style="font-family:var(--font-display);font-size:24px;margin-top:16px;min-height:32px"></p>
+      <button class="btn btn-accent btn-large" id="btn-tiebreak-spin" onclick="spinTiebreakWheel()">🎡 Lancer la roue !</button>
+      <button class="btn btn-primary btn-large" id="btn-tiebreak-done" onclick="closeTiebreakModal()" style="display:none">✅ Continuer</button>
+    </div>
+  </div>
+
+  <!-- ==================== ÉCRAN PARAMÈTRES ==================== -->
+  <div id="screen-settings" class="screen">
+    <div class="settings-container">
+      <div class="lang-toggle-container" id="lang-toggle-settings">
+        <button class="lang-btn" data-lang="fr" onclick="switchLang('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">🇬🇧 EN</button>
+      </div>
+      <h2 id="settings-title-h2">⚙️ Paramètres du Jeu</h2>
+      <div class="settings-grid">
+
+        <!-- Équipes -->
+        <div class="settings-card">
+          <h3 id="settings-teams-title">👥 Équipes</h3>
+          <p class="rule-desc" id="settings-teams-desc">Choisissez le nombre d'équipes (2 à 6) qui participeront à la partie.</p>
+          <div class="setting-row">
+            <label id="settings-team-count-label">Nombre d'équipes</label>
+            <select id="set-team-count">
+              <option value="2">2 équipes</option>
+              <option value="3">3 équipes</option>
+              <option value="4" selected>4 équipes</option>
+              <option value="5">5 équipes</option>
+              <option value="6">6 équipes</option>
+            </select>
+          </div>
+          <div id="teams-active-preview" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"></div>
+        </div>
+
+        <!-- Thèmes -->
+        <div class="settings-card">
+          <h3>🎨 Thèmes</h3>
+          <p class="rule-desc">Sélectionnez un ou plusieurs thèmes. Seules les questions des thèmes choisis seront posées. (Tout décoché = tous les thèmes actifs)</p>
+          <div id="set-themes-container" style="display:flex;flex-direction:column;gap:10px;margin-top:10px">
+            <!-- filled dynamically by populateThemePicker() -->
+          </div>
+        </div>
+
+        <!-- Nuggets -->
+        <div class="settings-card">
+          <h3>🟡 Épreuve 1 : Nuggets</h3>
+          <p class="rule-desc">QCM à 4 choix, 4 niveaux de difficulté croissante. 1 question par équipe par niveau. Tirage au sort animé + suspense avant la réponse.</p>
+          <div class="setting-row"><label>Points niveau 1 (très facile)</label><input type="number" id="set-nuggets-pts-1" value="1" min="1" max="10"></div>
+          <div class="setting-row"><label>Points niveau 2</label><input type="number" id="set-nuggets-pts-2" value="1" min="1" max="10"></div>
+          <div class="setting-row"><label>Points niveau 3</label><input type="number" id="set-nuggets-pts-3" value="1" min="1" max="10"></div>
+          <div class="setting-row"><label>Points niveau 4 (le plus dur)</label><input type="number" id="set-nuggets-pts-4" value="1" min="1" max="10"></div>
+          <div class="setting-row"><label>Timer par question (sec, 0 = sans)</label><input type="number" id="set-nuggets-timer" value="30" min="0" max="120"></div>
+        </div>
+
+        <!-- Sel ou Poivre -->
+        <div class="settings-card">
+          <h3>🧂 Épreuve 2 : Sel ou Poivre</h3>
+          <p class="rule-desc">Questions de rapidité ! L'animateur lit les questions en salle. Toutes les équipes jouent ensemble. Bonne réponse = +X, Mauvaise = −X. L'animateur clique +/− par équipe.</p>
+          <div class="setting-row"><label>Points (+X / −X)</label><input type="number" id="set-sop-points" value="1" min="1" max="10"></div>
+        </div>
+
+        <!-- Menus -->
+        <div class="settings-card">
+          <h3>📋 Épreuve 3 : Les Menus</h3>
+          <p class="rule-desc">5 menus de 5 questions ouvertes. L'équipe 1ère au classement choisit son menu en premier, puis la 2ème, etc. L'animateur lit la question et juge la réponse.</p>
+          <div class="setting-row"><label>Points par bonne réponse</label><input type="number" id="set-menus-points" value="2" min="1" max="10"></div>
+          <div class="setting-row"><label>Timer par question (sec, 0 = sans)</label><input type="number" id="set-menus-timer" value="30" min="0" max="120"></div>
+        </div>
+
+        <!-- L'Addition -->
+        <div class="settings-card card-addition">
+          <h3>🧾 Épreuve 4 : L'Addition</h3>
+          <p class="rule-desc">Questions de rapidité en salle ! Toutes les équipes jouent ensemble. Bonne réponse = +X, Mauvaise = −X. L'animateur clique +/− par équipe.</p>
+          <div class="setting-row"><label>Points (+X / −X)</label><input type="number" id="set-addition-points" value="4" min="1" max="20"></div>
+        </div>
+
+        <!-- Burger de la Mort -->
+        <div class="settings-card card-death">
+          <h3>💀 Épreuve 5 : Burger de la Mort</h3>
+          <p class="rule-desc">Épreuve finale réservée à l'équipe en tête ! Défi chronométré en salle, géré par l'animateur.</p>
+          <div class="setting-row"><label>Timer par défaut (sec, 0 = sans)</label><input type="number" id="set-death-timer" value="0" min="0" max="120"></div>
+        </div>
+
+        <!-- Général -->
+        <div class="settings-card card-general">
+          <h3>🏆 Règles Générales</h3>
+          <div class="setting-row"><label>Animateur 1</label><input type="text" id="set-animateur-1" value="Jean-Pierre" placeholder="Prénom animateur 1"></div>
+          <div class="setting-row"><label>Animateur 2</label><input type="text" id="set-animateur-2" value="Cyril" placeholder="Prénom animateur 2"></div>
+          <div class="setting-row">
+            <label>Ordre des équipes</label>
+            <select id="set-team-order">
+              <option value="random" selected>🎲 Tirage au sort (animé)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Joueurs -->
+        <div class="settings-card">
+          <h3>🎰 Tirage au sort des Joueurs</h3>
+          <p class="rule-desc">Ajoutez les prénoms des participants, puis tirez au sort leur équipe automatiquement.</p>
+          <div id="player-draw-result" style="display:none;margin-top:10px"></div>
+          <div style="margin-top:14px">
+            <button class="btn btn-primary" onclick="openPlayerDrawModal()">🎲 Tirer au sort les Équipes</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="settings-actions">
+        <button class="btn btn-secondary" onclick="showScreen('screen-welcome')">← Retour</button>
+        <button class="btn btn-primary" onclick="saveSettings(); showScreen('screen-welcome')">💾 Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ÉCRAN JEU PRINCIPAL ==================== -->
+  <div id="screen-game" class="screen">
+    <div class="scoreboard-bar" id="scoreboard-bar">
+      <!-- filled dynamically by updateScoreboard() -->
+    </div>
+
+    <div class="round-indicator">
+      <div class="round-tab" data-round="nuggets" id="tab-nuggets">🟡 Nuggets</div>
+      <div class="round-tab" data-round="sel_ou_poivre" id="tab-sel_ou_poivre">🧂 Sel ou Poivre</div>
+      <div class="round-tab" data-round="menus" id="tab-menus">📋 Menus</div>
+      <div class="round-tab" data-round="addition" id="tab-addition">🧾 L'Addition</div>
+      <div class="round-tab" data-round="burger_de_la_mort" id="tab-burger_de_la_mort">💀 Burger de la Mort</div>
+    </div>
+
+    <div class="question-area" id="question-area">
+      <!-- NUGGETS zone -->
+      <div id="zone-nuggets" class="game-zone" style="display:none;">
+        <div class="current-team-banner">C'est au tour de : <strong id="nuggets-team-name">—</strong></div>
+        <div class="question-card" id="nuggets-card">
+          <div class="lang-toggle-container lang-toggle-q" id="lang-toggle-nuggets">
+            <button class="lang-btn" data-lang="fr" onclick="setQuestionDisplayLang('nuggets','fr')">🇫🇷 FR</button>
+            <button class="lang-btn" data-lang="en" onclick="setQuestionDisplayLang('nuggets','en')">🇬🇧 EN</button>
+          </div>
+          <div class="question-number" id="nuggets-q-number"></div>
+          <div class="nuggets-level-badge" id="nuggets-level-badge"></div>
+          <div class="question-theme-badge" id="nuggets-theme-badge" style="display:none;"></div>
+          <div class="question-text" id="nuggets-q-text"></div>
+          <div class="qcm-choices" id="nuggets-qcm-choices"></div>
+          <div class="nuggets-suspense-overlay" id="nuggets-suspense" style="display:none;">
+            <div class="suspense-dots"><span>.</span><span>.</span><span>.</span></div>
+          </div>
+          <div class="nuggets-result-overlay" id="nuggets-result" style="display:none;"></div>
+        </div>
+        <div class="timer-container" id="nuggets-timer-container" style="display:none;cursor:pointer" onclick="startNuggetsTimer()" title="Cliquez pour lancer le chrono">
+          <div class="timer-ring">
+            <svg viewBox="0 0 100 100"><circle class="timer-bg" cx="50" cy="50" r="45"></circle><circle class="timer-progress" id="timer-progress" cx="50" cy="50" r="45"></circle></svg>
+            <div class="timer-text" id="timer-text">0</div>
+          </div>
+          <div class="timer-hint" id="nuggets-timer-hint">👆 Cliquez pour lancer</div>
+        </div>
+        <div class="nuggets-controls">
+          <button class="btn btn-control" id="btn-next-question" onclick="nextQuestion()" style="display:none">➡️ Question suivante</button>
+          <button class="btn btn-control btn-accent" id="btn-next-round" onclick="confirmNextRound()" style="display:none">⏭️ Prochaine épreuve</button>
+        </div>
+      </div>
+
+      <!-- SEL OU POIVRE zone (rapidité en salle) -->
+      <div id="zone-sop" class="game-zone" style="display:none;">
+        <div class="speed-round-header">
+          <h2>🧂 Sel ou Poivre — Questions de rapidité</h2>
+          <p class="speed-round-rule">L'animateur lit les questions. Les équipes buzzent. Bonne réponse = <strong class="pts-plus" id="sop-pts-label">+1</strong> · Mauvaise = <strong class="pts-minus" id="sop-pts-label-neg">−1</strong></p>
+        </div>
+        <div class="speed-score-grid" id="sop-score-grid"></div>
+        <div class="speed-controls">
+          <button class="btn btn-control" id="btn-sop-next-round" onclick="confirmNextRound()">⏭️ Épreuve suivante</button>
+        </div>
+      </div>
+
+      <!-- MENUS zone -->
+      <div id="zone-menus" class="game-zone" style="display:none;">
+        <!-- Phase 0: point score + classement avant choix -->
+        <div id="menus-ranking-phase">
+          <div class="menus-ranking-container">
+            <h2 class="menus-ranking-title">📊 Classement avant les Menus</h2>
+            <div class="menus-ranking-list" id="menus-ranking-list"></div>
+            <p class="menus-ranking-ties" id="menus-ranking-ties" style="display:none"></p>
+            <div class="menus-ranking-buttons">
+              <button class="btn btn-primary btn-large" id="btn-menus-tiebreak" onclick="launchMenusTiebreak()" style="display:none">🎡 Lancer le tirage au sort</button>
+            </div>
+            <div id="menus-final-order" style="display:none">
+              <h3 class="menus-order-title">📋 Ordre de choix des menus</h3>
+              <div class="menus-order-list" id="menus-order-list"></div>
+              <button class="btn btn-accent btn-large" onclick="proceedToMenuPick()">🍔 Choisir les menus !</button>
+            </div>
+          </div>
+        </div>
+        <!-- Phase 1: sélection du menu -->
+        <div id="menus-pick-phase" style="display:none">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+            <div class="current-team-banner" style="margin:0">C'est au tour de : <strong id="menus-pick-team">—</strong> de choisir un menu</div>
+            <div class="lang-toggle-container" id="lang-toggle-menus-pick" style="margin:0">
+              <button class="lang-btn" data-lang="fr" onclick="setMenusPickLang('fr')">🇫🇷 FR</button>
+              <button class="lang-btn" data-lang="en" onclick="setMenusPickLang('en')">🇬🇧 EN</button>
+            </div>
+          </div>
+          <div class="menus-grid" id="menus-grid"></div>
+        </div>
+        <!-- Phase 2: questions du menu -->
+        <div id="menus-play-phase" style="display:none;">
+          <div class="current-team-banner"><strong id="menus-play-team">—</strong> · <span id="menus-play-menu-name"></span></div>
+          <div class="question-card" id="menus-card">
+            <div class="lang-toggle-container lang-toggle-q" id="lang-toggle-menus">
+              <button class="lang-btn" data-lang="fr" onclick="setQuestionDisplayLang('menus','fr')">🇫🇷 FR</button>
+              <button class="lang-btn" data-lang="en" onclick="setQuestionDisplayLang('menus','en')">🇬🇧 EN</button>
+            </div>
+            <div class="question-number" id="menus-q-number"></div>
+            <div class="question-theme-badge" id="menus-theme-badge" style="display:none;"></div>
+            <div class="question-text" id="menus-q-text"></div>
+          </div>
+          <div class="timer-container" id="menus-timer-container" style="display:none;cursor:pointer" onclick="startMenusTimer()" title="Cliquez pour lancer le chrono">
+            <div class="timer-ring">
+              <svg viewBox="0 0 100 100"><circle class="timer-bg" cx="50" cy="50" r="45"></circle><circle class="timer-progress" id="menus-timer-progress" cx="50" cy="50" r="45"></circle></svg>
+              <div class="timer-text" id="menus-timer-text">0</div>
+            </div>
+            <div class="timer-hint" id="menus-timer-hint">👆 Cliquez pour lancer</div>
+          </div>
+          <div class="menus-answer-buttons" id="menus-answer-buttons">
+            <button class="btn btn-menus-correct" id="btn-menus-correct" onclick="menusAnswer(true)">✅ CORRECT</button>
+            <button class="btn btn-menus-incorrect" id="btn-menus-incorrect" onclick="menusAnswer(false)">❌ INCORRECT</button>
+          </div>
+          <div class="menus-points-feedback" id="menus-points-feedback"></div>
+          <div class="menus-answers-reveal" id="menus-answers-reveal" style="display:none;"></div>
+          <div class="menus-controls">
+            <button class="btn btn-control" id="btn-menus-next" onclick="menusNextQuestion()" style="display:none">➡️ Question suivante</button>
+            <button class="btn btn-control btn-accent" id="btn-menus-next-round" onclick="confirmNextRound()" style="display:none">⏭️ Prochaine épreuve</button>
+          </div>
+        </div>
+        <!-- Phase 3: transition entre équipes -->
+        <div id="menus-transition-phase" style="display:none;">
+          <div class="menus-transition-container">
+            <div class="menus-transition-summary" id="menus-transition-summary"></div>
+            <div class="menus-transition-next" id="menus-transition-next"></div>
+            <button class="btn btn-accent btn-large" id="btn-menus-transition" onclick="menusTransitionContinue()">▶️ C'est parti !</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- L'ADDITION zone (rapidité en salle) -->
+      <div id="zone-addition" class="game-zone" style="display:none;">
+        <div class="speed-round-header">
+          <h2>🧾 L'Addition — Questions de rapidité</h2>
+          <p class="speed-round-rule">L'animateur lit les questions. Toutes les équipes jouent ensemble !<br>Bonne réponse = <strong class="pts-plus" id="add-pts-label">+4</strong> · Mauvaise = <strong class="pts-minus" id="add-pts-label-neg">−4</strong></p>
+        </div>
+        <div class="speed-score-grid" id="add-score-grid"></div>
+        <div class="speed-controls">
+          <button class="btn btn-control" id="btn-add-next-round" onclick="confirmNextRound(finishAddition)">⏭️ Épreuve suivante</button>
+        </div>
+      </div>
+
+      <!-- POINT SCORE entre épreuves -->
+      <div id="zone-inter-round" class="game-zone" style="display:none;">
+        <div class="inter-round-container">
+          <h2 class="inter-round-title" id="inter-round-title">📊 Point Score</h2>
+          <div class="inter-round-ranking" id="inter-round-ranking"></div>
+          <div class="inter-round-next" id="inter-round-next"></div>
+          <button class="btn btn-accent btn-large" id="btn-inter-round-continue" onclick="interRoundContinue()">▶️ Épreuve suivante</button>
+        </div>
+      </div>
+
+      <!-- ANNONCE GAGNANT (entre Addition et Burger de la Mort) -->
+      <div id="zone-winner-announce" class="game-zone" style="display:none;">
+        <div class="winner-announce-container">
+          <div class="winner-icon" id="winner-announce-icon"></div>
+          <h2 class="winner-title" id="winner-announce-title"></h2>
+          <p class="winner-message" id="winner-announce-msg"></p>
+          <div class="winner-podium" id="winner-podium"></div>
+          <button class="btn btn-accent btn-large" onclick="proceedToDeath()" style="margin-top:24px">💀 Passer au Burger de la Mort</button>
+        </div>
+      </div>
+
+      <!-- BURGER DE LA MORT zone -->
+      <div id="zone-death" class="game-zone" style="display:none;">
+        <div class="death-header">
+          <h2>💀 Burger de la Mort</h2>
+          <p class="death-rule">Épreuve finale réservée à l'équipe en tête !</p>
+          <div class="death-winner-banner" id="death-winner-banner"></div>
+          <p class="death-choose-member" id="death-choose-msg" style="font-family:var(--font-heading);font-size:18px;color:var(--color-text-dim);margin-top:12px"></p>
+        </div>
+        <div class="question-card" id="death-card" style="display:none;">
+          <div class="lang-toggle-container lang-toggle-q" id="lang-toggle-death">
+            <button class="lang-btn" data-lang="fr" onclick="setQuestionDisplayLang('death','fr')">🇫🇷 FR</button>
+            <button class="lang-btn" data-lang="en" onclick="setQuestionDisplayLang('death','en')">🇬🇧 EN</button>
+          </div>
+          <div class="question-text" id="death-q-text"></div>
+          <div class="death-answer" id="death-answer" style="display:none;"></div>
+        </div>
+        <div class="timer-container" id="death-timer-container" style="display:none;">
+          <div class="timer-ring">
+            <svg viewBox="0 0 100 100"><circle class="timer-bg" cx="50" cy="50" r="45"></circle><circle class="timer-progress" id="death-timer-progress" cx="50" cy="50" r="45"></circle></svg>
+            <div class="timer-text" id="death-timer-text">0</div>
+          </div>
+        </div>
+        <div class="death-controls">
+          <button class="btn btn-primary btn-large" onclick="resetGame()">🏠 Retour au Menu principal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ÉCRAN RÉSULTATS ==================== -->
+  <div id="screen-results" class="screen">
+    <div class="results-container">
+      <h1 class="results-title">🏆 FIN DU BURGER QUIZ !</h1>
+      <div class="podium" id="podium"></div>
+      <div class="results-details" id="results-details"></div>
+      <button class="btn btn-primary btn-large" onclick="resetGame()">🔄 Nouvelle Partie</button>
+    </div>
+  </div>
+
+  <!-- ==================== MODALS ==================== -->
+  <!-- Modal confirmation épreuve suivante -->
+  <div id="modal-next-round" class="modal-overlay" style="display:none">
+    <div class="modal-content" style="max-width:420px;text-align:center">
+      <h2>⏭️ Épreuve suivante</h2>
+      <p style="margin:12px 0 24px;font-size:16px">Êtes-vous sûr de vouloir passer à l'épreuve suivante ?</p>
+      <div style="display:flex;gap:12px;justify-content:center">
+        <button class="btn btn-secondary btn-large" onclick="closeNextRoundModal()">Non, rester</button>
+        <button class="btn btn-accent btn-large" id="btn-confirm-next-round" onclick="closeNextRoundModal(); nextRound()">Oui, on passe !</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-round" style="display:none;">
+    <div class="modal-content round-intro">
+      <div class="round-intro-icon" id="round-intro-icon"></div>
+      <h2 id="round-intro-title"></h2>
+      <p id="round-intro-desc"></p>
+      <p class="round-intro-scoring" id="round-intro-scoring"></p>
+      <button class="btn btn-accent btn-large" onclick="closeRoundModal()">C'est Parti ! 🍔</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-team-draw" style="display:none;">
+    <div class="modal-content draw-modal">
+      <h2>🎲 Tirage au sort de l'ordre !</h2>
+      <div class="draw-slots" id="draw-team-slots">
+        <!-- filled dynamically by showTeamDrawModal() -->
+      </div>
+      <button class="btn btn-accent btn-large" id="btn-start-team-draw" onclick="runTeamDrawAnimation()">🎲 Lancer le tirage !</button>
+      <button class="btn btn-primary btn-large" id="btn-team-draw-done" style="display:none;" onclick="closeTeamDrawModal()">C'est Parti ! 🍔</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-question-draw" style="display:none;">
+    <div class="modal-content draw-modal">
+      <h2 id="question-draw-title">🎰 Tirage de la question...</h2>
+      <p class="draw-team-label" id="question-draw-team"></p>
+      <div class="draw-roulette"><div class="roulette-window"><div class="roulette-strip" id="roulette-strip"></div></div></div>
+      <p class="draw-subtitle" id="question-draw-sub"></p>
+    </div>
+  </div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
