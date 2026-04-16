@@ -452,6 +452,24 @@ h1 { font-family: var(--font-display); font-size: 72px; letter-spacing: 6px; col
 .editor-export-section { background: var(--color-bg-light); border-radius: var(--radius); padding: 20px; margin-top: 30px; border: 2px solid #1a3a6e; text-align: center; }
 .editor-export-section h3 { font-family: var(--font-heading); font-size: 18px; margin-bottom: 6px; }
 
+/* Editor badges + edit mode */
+.eq-badge-custom, .eq-badge-edited { display: inline-block; font-family: var(--font-heading); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 50px; margin-left: 8px; }
+.eq-badge-custom { background: rgba(46,204,113,0.2); color: var(--color-success); border: 1px solid rgba(46,204,113,0.5); }
+.eq-badge-edited { background: rgba(241,196,15,0.2); color: var(--color-mayo); border: 1px solid rgba(241,196,15,0.5); }
+.eq-actions { display: flex; flex-direction: column; gap: 6px; }
+.eq-actions .btn { padding: 6px 12px; font-size: 14px; }
+.em-actions { text-align: right; margin-top: 10px; display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
+
+.editor-list-subtitle { font-family: var(--font-heading); font-size: 14px; color: var(--color-text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #1a3a6e; }
+
+.editor-edit-banner {
+  background: rgba(241,196,15,0.15); border: 2px dashed var(--color-mayo);
+  color: var(--color-mayo); font-family: var(--font-heading); font-size: 15px;
+  padding: 12px 20px; border-radius: var(--radius-sm); margin-bottom: 16px; text-align: center;
+}
+.btn-editing { background: var(--color-mayo) !important; color: #333 !important; }
+.btn-cancel-edit { background: #7f8c8d !important; color: #fff !important; }
+
 /* Editor responsive */
 @media (max-width: 768px) {
   .editor-row { flex-direction: column; gap: 6px; }
