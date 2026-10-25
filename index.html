@@ -646,6 +646,7 @@
           <div class="editor-row"><label>Question (EN)</label><textarea id="ed-bdm-en" rows="2" placeholder="Question in English..."></textarea></div>
           <div class="editor-row"><label>Réponse (FR)</label><textarea id="ed-bdm-ans-fr" rows="2" placeholder="Ex : Brie, Comté, Camembert, Roquefort, Cantal…"></textarea></div>
           <div class="editor-row"><label>Réponse (EN)</label><textarea id="ed-bdm-ans-en" rows="2" placeholder="Answer in English..."></textarea></div>
+          <div class="editor-row"><label>Burger (nom)</label><input type="text" id="ed-bdm-burger" list="ed-bdm-burger-list" placeholder="Ex : Burger Vendredi 13 (10 questions par burger)"><datalist id="ed-bdm-burger-list"></datalist></div>
           <div class="editor-row"><label>Chrono (secondes)</label><input type="number" id="ed-bdm-timer" value="30" min="5" max="300"></div>
           <div class="editor-actions">
             <button class="btn btn-accent" id="ed-bdm-save" onclick="bankSave('bdm')">💾 Ajouter la question</button>
@@ -656,6 +657,7 @@
           <h3>📋 Questions Burger de la Mort <small id="ed-bdm-count"></small></h3>
           <div class="editor-filter-row">
             <label>Rechercher :</label>
+            <select id="ed-bdm-filter-burger" onchange="bankRenderList('bdm')"><option value="">Tous les burgers</option></select>
             <input type="text" id="ed-bdm-search" placeholder="Mot de la question ou de la réponse" oninput="bankRenderList('bdm')">
           </div>
           <div id="editor-bdm-list" class="editor-questions-list"></div>

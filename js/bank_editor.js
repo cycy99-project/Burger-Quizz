@@ -25,7 +25,7 @@ const bankEl = (k, s) => document.getElementById(`ed-${k}-${s}`);
 
 function bankClearForm(k) {
   ['fr', 'en', 'ans-fr', 'ans-en'].forEach(s => { bankEl(k, s).value = ''; });
-  if (BANKS[k].timer) bankEl(k, 'timer').value = 30;
+  if (BANKS[k].timer) { bankEl(k, 'timer').value = 30; bankEl(k, 'burger').value = ''; }
   _bankEditing[k] = null;
   bankEl(k, 'save').textContent = '💾 Ajouter la question';
   bankEl(k, 'cancel').style.display = 'none';
@@ -41,7 +41,10 @@ function bankSave(k) {
     answer_fr: ansFr, answer_en: bankEl(k, 'ans-en').value.trim() || ansFr,
     theme: BANK_THEME
   };
-  if (BANKS[k].timer) data.timer = parseInt(bankEl(k, 'timer').value) || 30;
+  if (BANKS[k].timer) {
+    data.timer = parseInt(bankEl(k, 'timer').value) || 30;
+    data.burger = bankEl(k, 'burger').value.trim();
+  }
   const list = bankLoad(k);
   if (_bankEditing[k]) {
     const entry = list.find(x => x._id === _bankEditing[k]);
@@ -64,7 +67,7 @@ function bankStartEdit(k, id) {
   bankEl(k, 'en').value = q.en;
   bankEl(k, 'ans-fr').value = q.answer_fr;
   bankEl(k, 'ans-en').value = q.answer_en;
-  if (BANKS[k].timer) bankEl(k, 'timer').value = q.timer || 30;
+  if (BANKS[k].timer) { bankEl(k, 'timer').value = q.timer || 30; bankEl(k, 'burger').value = q.burger || ''; }
   bankEl(k, 'save').textContent = '💾 Enregistrer les modifications';
   bankEl(k, 'cancel').style.display = '';
   document.getElementById('form-' + k).scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -80,7 +83,19 @@ function bankDelete(k, id) {
 function bankRenderList(k) {
   const cfg = BANKS[k];
   const search = bankEl(k, 'search').value.trim().toLowerCase();
-  const rows = [...cfg.native().map(q => ({ q, builtin: true })), ...bankLoad(k).map(q => ({ q, builtin: false }))]
+  const all = [...cfg.native().map(q => ({ q, builtin: true })), ...bankLoad(k).map(q => ({ q, builtin: false }))];
+  let burger = '';
+  if (cfg.timer) {
+    const names = [...new Set(all.map(r => r.q.burger).filter(Boolean))];
+    const sel = bankEl(k, 'filter-burger');
+    burger = sel.value;
+    sel.innerHTML = '<option value="">Tous les burgers</option>' + names.map(n => `<option value="${bankEsc(n)}">${bankEsc(n)}</option>`).join('');
+    sel.value = names.includes(burger) ? burger : '';
+    burger = sel.value;
+    bankEl(k, 'burger-list').innerHTML = names.map(n => `<option value="${bankEsc(n)}">`).join('');
+  }
+  const rows = all
+    .filter(r => !burger || r.q.burger === burger)
     .filter(r => !search || (r.q.fr + ' ' + r.q.answer_fr).toLowerCase().includes(search));
   bankEl(k, 'count').textContent = `${rows.length} question(s)`;
   const box = document.getElementById(`editor-${k}-list`);
@@ -91,7 +106,7 @@ function bankRenderList(k) {
   box.innerHTML = rows.map(r => {
     const q = r.q;
     const badge = r.builtin ? '<span class="eq-badge-edited">fichier</span>' : '<span class="eq-badge-custom">custom</span>';
-    const timer = cfg.timer ? `<span class="eq-level">⏱ ${q.timer || 30}s</span>` : '';
+    const timer = cfg.timer ? `<span class="eq-level">⏱ ${q.timer || 30}s</span>${q.burger ? `<span class="eq-level">🍔 ${bankEsc(q.burger)}</span>` : ''}` : '';
     const actions = r.builtin ? '' :
       `<button class="btn btn-primary eq-edit" onclick="bankStartEdit('${k}', ${q._id})">✏️</button>
        <button class="eq-delete" onclick="bankDelete('${k}', ${q._id})">🗑️</button>`;
