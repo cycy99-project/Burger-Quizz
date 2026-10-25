@@ -147,5 +147,38 @@ const SOP_BANK = [
     {"fr":"Michel Galabru","en":"Michel Galabru","answer":"mort"},
     {"fr":"Lionel Jospin","en":"Lionel Jospin","answer":"mort"},
     {"fr":"Xavier Dupont de Ligonnès","en":"Xavier Dupont de Ligonnès","answer":"inconnu"}
-  ], theme: "Culture générale" }
+  ], theme: "Culture générale" },
+  { type: "classement", fr: "Sapin de Noël, Belle-famille ou les deux ?", en: "Christmas tree, In-laws or both?", options: [{"key":"sapin","fr":"Sapin de Noël","en":"Christmas tree"},{"key":"famille","fr":"Belle-famille","en":"In-laws"},{"key":"deux","fr":"Les deux","en":"Both"}], items: [
+    {"fr":"Perd ses épines.","en":"Sheds its needles.","answer":"sapin"},
+    {"fr":"Arrive chargé de cadeaux (ou de remarques).","en":"Arrives loaded with gifts (or remarks).","answer":"deux"},
+    {"fr":"On le décore.","en":"Gets decorated.","answer":"sapin"},
+    {"fr":"Reste quelques jours, puis on est soulagé de le voir partir.","en":"Stays a few days, then everyone is relieved to see it go.","answer":"deux"},
+    {"fr":"Finit sur le trottoir début janvier.","en":"Ends up on the sidewalk in early January.","answer":"sapin"},
+    {"fr":"Prend toute la place dans le salon.","en":"Takes up all the space in the living room.","answer":"deux"},
+    {"fr":"Donne son avis sur la cuisson de la dinde.","en":"Has opinions on how the turkey is cooked.","answer":"famille"},
+    {"fr":"Sent bon la forêt.","en":"Smells of the forest.","answer":"sapin"},
+    {"fr":"Pique.","en":"Is prickly.","answer":"deux"},
+    {"fr":"On y accroche des boules.","en":"Has baubles hung on it.","answer":"sapin"},
+    {"fr":"Débarque sans prévenir la veille de Noël.","en":"Turns up unannounced on Christmas Eve.","answer":"famille"},
+    {"fr":"Reçoit les cadeaux à ses pieds.","en":"Has presents laid at its feet.","answer":"sapin"},
+    {"fr":"Demande : « Alors, toujours célibataire ? »","en":"Asks: 'So, still single?'","answer":"famille"},
+    {"fr":"S'illumine quand on le branche.","en":"Lights up when you plug it in.","answer":"sapin"},
+    {"fr":"Est souvent artificiel(le).","en":"Is often artificial.","answer":"deux","note_fr":"Les sourires aussi.","note_en":"So are the smiles."}
+  ], theme: "Noël & Saint-Sylvestre" },
+  { type: "classement", fr: "Champagne, Bonne résolution ou les deux ?", en: "Champagne, New Year's resolution or both?", options: [{"key":"champagne","fr":"Champagne","en":"Champagne"},{"key":"resolution","fr":"Bonne résolution","en":"New Year's resolution"},{"key":"deux","fr":"Les deux","en":"Both"}], items: [
+    {"fr":"Pétille.","en":"Sparkles.","answer":"champagne"},
+    {"fr":"Se prend le 31 au soir.","en":"Is made on the night of the 31st.","answer":"deux"},
+    {"fr":"Est abandonné(e) vers la mi-janvier.","en":"Is abandoned around mid-January.","answer":"resolution"},
+    {"fr":"Fait sauter un bouchon.","en":"Pops a cork.","answer":"champagne"},
+    {"fr":"Se sert bien frais.","en":"Is served nice and cold.","answer":"champagne"},
+    {"fr":"Commence souvent par « À partir de lundi… ».","en":"Often starts with 'From Monday on…'.","answer":"resolution"},
+    {"fr":"On la regrette le 1er janvier au matin.","en":"Is regretted on the morning of January 1st.","answer":"deux"},
+    {"fr":"Monte à la tête.","en":"Goes to your head.","answer":"deux"},
+    {"fr":"Vient de la région de Reims et d'Épernay.","en":"Comes from the Reims and Épernay area.","answer":"champagne"},
+    {"fr":"On en prend plusieurs d'un coup, sans les tenir.","en":"You take several at once, without keeping them.","answer":"resolution"},
+    {"fr":"Se trinque à minuit.","en":"Is toasted at midnight.","answer":"champagne"},
+    {"fr":"Promet d'arrêter le sucre, le tabac et les écrans.","en":"Promises to quit sugar, tobacco and screens.","answer":"resolution"},
+    {"fr":"Donne mal à la tête le lendemain.","en":"Gives you a headache the next day.","answer":"champagne"},
+    {"fr":"Se fait avec le sourire… et s'oublie avec le même.","en":"Is made with a smile… and forgotten with one too.","answer":"resolution"}
+  ], theme: "Noël & Saint-Sylvestre" }
 ];
