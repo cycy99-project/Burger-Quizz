@@ -379,6 +379,27 @@ const Questions_Menus = {
     { fr: "« N'est stupide que la stupidité ! » De quel film ?", en: "'Stupid is as stupid does!' From which film?", theme: "Culture générale", reponse_fr: ["Forrest Gump"], reponse_en: ["Forrest Gump"] },
     { fr: "« C'était pas mauvais, c'était très mauvais ! » De quel film ?", en: "'It wasn't bad, it was very bad!' From which French film?", theme: "Culture générale", reponse_fr: ["La Grande Vadrouille"], reponse_en: ["La Grande Vadrouille (Don't Look Now… We're Being Shot At)"] }
   ],
+  "🍔 Menu Vrai ou Faux n°3 : le fast-food": [
+    { fr: "Vrai ou Faux : il existe un emoji officiel du hamburger.", en: "True or False: there is an official hamburger emoji.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
+    { fr: "Vrai ou Faux : un hamburger contient obligatoirement du jambon.", en: "True or False: a hamburger must contain ham.", theme: "Culture générale", reponse_fr: ["Faux (son nom vient de Hambourg)","Faux"], reponse_en: ["False (its name comes from Hamburg)","False"] },
+    { fr: "Vrai ou Faux : les nuggets ont été inventés dans les années 1950.", en: "True or False: nuggets were invented in the 1950s.", theme: "Culture générale", reponse_fr: ["Faux (1963)","Faux"], reponse_en: ["False (1963)","False"] },
+    { fr: "Vrai ou Faux : Burger King a ouvert avant McDonald's.", en: "True or False: Burger King opened before McDonald's.", theme: "Culture générale", reponse_fr: ["Faux (McDo 1940, Burger King 1954)","Faux"], reponse_en: ["False (McDonald's 1940, Burger King 1954)","False"] },
+    { fr: "Vrai ou Faux : le record du plus gros burger pèse plus d'une tonne.", en: "True or False: the record for the biggest burger weighs over a ton.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] }
+  ],
+  "🍟 Menu Vrai ou Faux n°4 : burgers autour du monde": [
+    { fr: "Vrai ou Faux : le cornichon est en réalité un petit concombre.", en: "True or False: a gherkin is actually a small cucumber.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
+    { fr: "Vrai ou Faux : les frites sont plus populaires que les burgers aux États-Unis.", en: "True or False: French fries are more popular than burgers in the USA.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
+    { fr: "Vrai ou Faux : le Big Mac a été inventé en France.", en: "True or False: the Big Mac was invented in France.", theme: "Culture générale", reponse_fr: ["Faux (Pennsylvanie, 1967)","Faux"], reponse_en: ["False (Pennsylvania, 1967)","False"] },
+    { fr: "Vrai ou Faux : le Japon propose des burgers au Kit-Kat.", en: "True or False: Japan offers Kit-Kat burgers.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
+    { fr: "Vrai ou Faux : la France est le 2e marché de McDonald's au monde.", en: "True or False: France is McDonald's 2nd biggest market worldwide.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] }
+  ],
+  "🥫 Menu Vrai ou Faux n°5 : sauces, mots et mythes": [
+    { fr: "Vrai ou Faux : le Coca-Cola était vert à l'origine.", en: "True or False: Coca-Cola was originally green.", theme: "Culture générale", reponse_fr: ["Faux (mythe urbain)","Faux"], reponse_en: ["False (urban myth)","False"] },
+    { fr: "Vrai ou Faux : le ketchup était autrefois vendu comme médicament.", en: "True or False: ketchup was once sold as medicine.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
+    { fr: "Vrai ou Faux : le mot « restaurant » est d'origine italienne.", en: "True or False: the word 'restaurant' has Italian origins.", theme: "Culture générale", reponse_fr: ["Faux (du français « restaurer »)","Faux"], reponse_en: ["False (from the French 'restaurer')","False"] },
+    { fr: "Vrai ou Faux : le mot « mayonnaise » vient de Mayence, en Allemagne.", en: "True or False: the word 'mayonnaise' comes from Mainz in Germany.", theme: "Culture générale", reponse_fr: ["Faux (Mahón, en Espagne)","Faux"], reponse_en: ["False (Mahón, in Spain)","False"] },
+    { fr: "Vrai ou Faux : un Américain mange en moyenne 3 burgers par semaine.", en: "True or False: an American eats on average 3 burgers per week.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] }
+  ],
 };
 
 const Questions_Addition = [
@@ -446,7 +467,10 @@ const MENUS_TITLES = {
   "🐔 Menu Les expressions françaises, c'est pas du gâteau": { fr: "Les expressions françaises, c'est pas du gâteau", en: "French Expressions Are No Piece of Cake" },
   "🔬 Menu Sciences naturelles": { fr: "Sciences naturelles", en: "Natural Sciences" },
   "🔁 Menu Faux ou Vrai": { fr: "Faux ou Vrai", en: "False or True" },
-  "🎬 Menu Répliques cultes de films": { fr: "Répliques cultes de films", en: "Cult Movie Quotes" }
+  "🎬 Menu Répliques cultes de films": { fr: "Répliques cultes de films", en: "Cult Movie Quotes" },
+  "🍔 Menu Vrai ou Faux n°3 : le fast-food": { fr: "Vrai ou Faux n°3 : le fast-food", en: "True or False #3: Fast Food" },
+  "🍟 Menu Vrai ou Faux n°4 : burgers autour du monde": { fr: "Vrai ou Faux n°4 : burgers autour du monde", en: "True or False #4: Burgers Around the World" },
+  "🥫 Menu Vrai ou Faux n°5 : sauces, mots et mythes": { fr: "Vrai ou Faux n°5 : sauces, mots et mythes", en: "True or False #5: Sauces, Words and Myths" }
 };
 
 function menuTitle(key) {
