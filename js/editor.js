@@ -102,6 +102,19 @@ function editorRefreshThemeDropdowns() {
     filterSel.appendChild(opt);
   });
   filterSel.value = filterVal;
+
+  const menuFilterSel = document.getElementById('ed-menu-filter-theme');
+  if (menuFilterSel) {
+    const menuFilterVal = menuFilterSel.value;
+    while (menuFilterSel.options.length > 1) menuFilterSel.remove(1);
+    themes.forEach(th => {
+      const opt = document.createElement('option');
+      opt.value = th;
+      opt.textContent = th;
+      menuFilterSel.appendChild(opt);
+    });
+    menuFilterSel.value = menuFilterVal;
+  }
 }
 
 function editorGetAllThemes() {
@@ -512,11 +525,13 @@ function editorRenderMenusList() {
   const container = document.getElementById('editor-menus-list');
   const customList = editorLoadMenus();
   const overrides = editorLoadOverrideMenus();
+  const filterTheme = document.getElementById('ed-menu-filter-theme').value;
 
   let html = '';
 
   // Built-in menus
-  const builtinKeys = _ORIGINAL_MENUS ? Object.keys(_ORIGINAL_MENUS) : [];
+  const builtinKeys = (_ORIGINAL_MENUS ? Object.keys(_ORIGINAL_MENUS) : [])
+    .filter(key => !filterTheme || (Questions_Menus[key] || [])[0]?.theme === filterTheme);
   if (builtinKeys.length) {
     html += '<h4 class="editor-list-subtitle">Menus intégrés</h4>';
     html += builtinKeys.map(key => {
@@ -542,9 +557,10 @@ function editorRenderMenusList() {
   }
 
   // Custom menus
-  if (customList.length) {
+  const customFiltered = customList.filter(m => !filterTheme || m.theme === filterTheme);
+  if (customFiltered.length) {
     html += '<h4 class="editor-list-subtitle" style="margin-top:20px">Menus personnalisés</h4>';
-    html += customList.map(m => {
+    html += customFiltered.map(m => {
       const qs = m.questions.map(q => `<li>${q.fr}</li>`).join('');
       return `<div class="editor-menu-card">
         <div class="em-header">
@@ -560,7 +576,7 @@ function editorRenderMenusList() {
     }).join('');
   }
 
-  if (!html) html = '<p style="color:var(--color-text-dim);font-style:italic">Aucun menu disponible.</p>';
+  if (!html) html = `<p style="color:var(--color-text-dim);font-style:italic">${filterTheme ? 'Aucun menu correspondant.' : 'Aucun menu disponible.'}</p>`;
   container.innerHTML = html;
 }
 

@@ -544,6 +544,12 @@
         <!-- Liste des menus custom -->
         <div class="editor-list-section">
           <h3>📋 Menus ajoutés</h3>
+          <div class="editor-filter-row">
+            <label>Filtrer par thème :</label>
+            <select id="ed-menu-filter-theme" onchange="editorRenderMenusList()">
+              <option value="">Tous les thèmes</option>
+            </select>
+          </div>
           <div id="editor-menus-list" class="editor-questions-list"></div>
         </div>
       </div>
