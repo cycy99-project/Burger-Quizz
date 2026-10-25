@@ -75,5 +75,44 @@ const SOP_BANK = [
     {"fr":"L'orgasme","en":"The orgasm","answer":"biologique"},
     {"fr":"Le Professeur Simon du capitaine Flam","en":"Professor Simon from Captain Future","answer":"deux"},
     {"fr":"C-3PO","en":"C-3PO","answer":"artificiel"}
-  ], theme: "Intelligence Artificielle" }
+  ], theme: "Intelligence Artificielle" },
+  { type: "classement", fr: "Toile, Toilettes ou les deux ?", en: "Web, Toilets or both?", options: [{"key":"toile","fr":"Toile","en":"Web"},{"key":"toilettes","fr":"Toilettes","en":"Toilets"},{"key":"deux","fr":"Les deux","en":"Both"}], items: [
+    {"fr":"On y passe parfois des heures sans rien produire.","en":"You sometimes spend hours there without producing anything.","answer":"deux"},
+    {"fr":"On peut y trouver des contenus douteux.","en":"You can find dubious content there.","answer":"deux"},
+    {"fr":"On s'y connecte souvent avec son portable.","en":"You often get on it with your phone.","answer":"deux"},
+    {"fr":"Au Québec, on dit « bécosses ».","en":"In Quebec, they say 'bécosses'.","answer":"toilettes"},
+    {"fr":"Les Japonais sans papier en raffolent.","en":"The Japanese, who go paperless, love them.","answer":"toilettes"},
+    {"fr":"On y « like », mais rarement ce qui en sort.","en":"You 'like' things there, but rarely what comes out.","answer":"deux"},
+    {"fr":"Certains s'y sentent inspirés.","en":"Some people feel inspired there.","answer":"deux"},
+    {"fr":"C'est un système hyperchiadé de textes.","en":"It's a highly elaborate system of texts.","answer":"toile"},
+    {"fr":"On préfère qu'elles soient bien nettoyées.","en":"You prefer them well cleaned.","answer":"toilettes"},
+    {"fr":"Ça plante parfois sans prévenir.","en":"It sometimes crashes without warning.","answer":"deux"},
+    {"fr":"On y chie beaucoup de code.","en":"A lot of code gets crapped out there.","answer":"toile"},
+    {"fr":"On y trouve du papier numérique.","en":"You can find digital paper there.","answer":"toile"},
+    {"fr":"Peut être publique ou privée.","en":"Can be public or private.","answer":"deux"},
+    {"fr":"On y trouve parfois des fake ;-)","en":"You sometimes find fakes there ;-)","answer":"toile"},
+    {"fr":"On y laisse parfois des traces.","en":"You sometimes leave traces there.","answer":"deux"},
+    {"fr":"Peut être bloqué sans prévenir.","en":"Can get blocked without warning.","answer":"deux"},
+    {"fr":"Si je dis « j'ai du tracas jusqu'au cou », c'est que j'ai besoin de… ?","en":"If I say 'I'm up to my neck in troubles', what do I need?","answer":"toilettes"},
+    {"fr":"Il y a parfois des fuites.","en":"There are sometimes leaks.","answer":"deux"}
+  ], theme: "Toile, Toiles, Internet & Horreur" },
+  { type: "classement", fr: "Loup-Garou, Garou ou les deux ?", en: "Werewolf, Garou (the singer) or both?", options: [{"key":"loup","fr":"Loup-Garou","en":"Werewolf"},{"key":"garou","fr":"Garou","en":"Garou"},{"key":"deux","fr":"Les deux","en":"Both"}], items: [
+    {"fr":"On ne l'entend hurler que les soirs de pleine lune.","en":"You only hear him howl on full-moon nights.","answer":"loup"},
+    {"fr":"Il a une voix rauque et une pilosité respectable.","en":"He has a raspy voice and respectable body hair.","answer":"deux"},
+    {"fr":"Il a les dents longues.","en":"He has long teeth (is very ambitious).","answer":"loup"},
+    {"fr":"Il fait partie intégrante du folklore québécois.","en":"He is an integral part of Quebec folklore.","answer":"deux"},
+    {"fr":"Il a des origines québécoises.","en":"He has Quebec origins.","answer":"garou"},
+    {"fr":"Il mord parfois les paroles.","en":"He sometimes bites the lyrics.","answer":"garou"},
+    {"fr":"Il déchire tout, même ses chemises.","en":"He tears everything apart, even his shirts.","answer":"deux"},
+    {"fr":"Il fait hurler le public.","en":"He makes the crowd scream.","answer":"deux"},
+    {"fr":"Il n'aime pas l'argent.","en":"He doesn't like silver (money).","answer":"loup","note_fr":"Jeu de mots argent / balle en argent.","note_en":"Pun on silver / money."},
+    {"fr":"Il est plus à l'aise dans le noir que sous les projecteurs.","en":"He's more comfortable in the dark than in the spotlight.","answer":"loup"},
+    {"fr":"Il a marqué les années 2000 à coups de griffes et de refrains.","en":"He marked the 2000s with claws and choruses.","answer":"garou"},
+    {"fr":"Il a hanté les nuits de Notre-Dame de Paris.","en":"He haunted the nights of Notre-Dame de Paris.","answer":"garou"},
+    {"fr":"Il n'aime pas l'ail.","en":"He doesn't like garlic.","answer":"garou"},
+    {"fr":"Il est lycanthrope.","en":"He is a lycanthrope.","answer":"loup"},
+    {"fr":"Il est philanthrope.","en":"He is a philanthropist.","answer":"garou"},
+    {"fr":"Il laisse toujours des traces.","en":"He always leaves traces.","answer":"deux"},
+    {"fr":"C'est un homme simple le jour, comme vous et moi.","en":"He's a simple man by day, just like you and me.","answer":"deux"}
+  ], theme: "Toile, Toiles, Internet & Horreur" }
 ];
