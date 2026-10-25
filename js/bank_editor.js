@@ -14,6 +14,11 @@ const BANKS = {
          native: () => (typeof BDM_BANK !== 'undefined' ? BDM_BANK : []) }
 };
 const _bankEditing = {};
+const _bankOpen = { add: new Set(), bdm: new Set() };
+
+function bankToggle(k, name, open) {
+  if (open) _bankOpen[k].add(name); else _bankOpen[k].delete(name);
+}
 
 function bankLoad(k) {
   try { return JSON.parse(localStorage.getItem(BANKS[k].ls)) || []; } catch { return []; }
@@ -123,11 +128,12 @@ function bankRenderList(k) {
       return `<li>${i + 1}. ${bankEsc(q.fr)} ${badge}${timer}
         <div class="em-answers">✅ ${bankEsc(q.answer_fr)}</div>${actions}</li>`;
     }).join('');
-    return `<div class="editor-menu-card">
-      <div class="em-header"><span class="em-title">${cfg.icon} ${bankEsc(name)}</span>
-        <span class="em-theme">${items.length} question(s) · ${BANK_THEME}</span></div>
+    const open = search || _bankOpen[k].has(name) ? ' open' : '';
+    return `<details class="editor-menu-card"${open} ontoggle="bankToggle('${k}', this.dataset.name, this.open)" data-name="${bankEsc(name)}">
+      <summary class="em-header"><span class="em-title">${cfg.icon} ${bankEsc(name)}</span>
+        <span class="em-theme">${items.length} question(s) · ${BANK_THEME}</span></summary>
       <ul class="em-questions">${lis}</ul>
-    </div>`;
+    </details>`;
   }).join('');
 }
 

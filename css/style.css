@@ -480,3 +480,8 @@ h1 { font-family: var(--font-display); font-size: 72px; letter-spacing: 6px; col
   .editor-tab { border-radius: var(--radius-sm); border-bottom: 2px solid #1a3a6e; }
 }
 .editor-menu-card .em-answers { font-size: 12px; color: #6fcf7f; margin: 2px 0 0 14px; }
+
+.editor-menu-card > summary.em-header { cursor: pointer; list-style: none; }
+.editor-menu-card > summary.em-header::-webkit-details-marker { display: none; }
+.editor-menu-card > summary.em-header::before { content: "▶ "; color: var(--color-cheeseburger); }
+details.editor-menu-card[open] > summary.em-header::before { content: "▼ "; }
