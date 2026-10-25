@@ -648,6 +648,7 @@ function editorExportJSON() {
   const data = {
     nuggets: editorLoadNuggets(),
     menus: editorLoadMenus(),
+    sop: typeof editorLoadSop === 'function' ? editorLoadSop() : [],
     overrides_nuggets: editorLoadOverrideNuggets(),
     overrides_menus: editorLoadOverrideMenus()
   };
@@ -678,6 +679,12 @@ function editorImportJSON(event) {
         data.menus.forEach(m => { m._id = Date.now() + Math.random() * 1000 | 0; m._custom = true; });
         editorSaveMenusList([...existing, ...data.menus]);
       }
+      if (data.sop && Array.isArray(data.sop) && typeof editorSaveSopList === 'function') {
+        data.sop.forEach(q => { q._id = Date.now() + Math.random() * 1000 | 0; q._custom = true; });
+        editorSaveSopList([...editorLoadSop(), ...data.sop]);
+        sopRefreshThemeDropdowns();
+        editorRenderSopList();
+      }
       if (data.overrides_nuggets && typeof data.overrides_nuggets === 'object') {
         const cur = editorLoadOverrideNuggets();
         editorSaveOverrideNuggets({ ...cur, ...data.overrides_nuggets });
@@ -703,12 +710,14 @@ function editorClearAll() {
   if (!confirm('Supprimer TOUTES les modifications (custom + éditions de natives) ? Action irréversible.')) return;
   localStorage.removeItem(LS_CUSTOM_NUGGETS);
   localStorage.removeItem(LS_CUSTOM_MENUS);
+  localStorage.removeItem('burgerquiz_custom_sop');
   localStorage.removeItem(LS_OVERRIDE_NUGGETS);
   localStorage.removeItem(LS_OVERRIDE_MENUS);
   editorInjectCustomQuestions();
   editorRefreshThemeDropdowns();
   editorRenderNuggetsList();
   editorRenderMenusList();
+  if (typeof editorRenderSopList === 'function') { sopRefreshThemeDropdowns(); editorRenderSopList(); }
   showToast('Tout a été restauré.');
 }
 

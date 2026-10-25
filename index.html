@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🍔 Burger Quiz - Les Animateurs</title>
-  <link rel="stylesheet" href="css/style.css?v=20251025e">
+  <link rel="stylesheet" href="css/style.css?v=20251025f">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -399,6 +399,7 @@
       <div class="editor-tabs">
         <button class="editor-tab active" data-tab="nuggets" onclick="editorSwitchTab('nuggets')">🟡 Nuggets</button>
         <button class="editor-tab" data-tab="menus" onclick="editorSwitchTab('menus')">📋 Menus</button>
+        <button class="editor-tab" data-tab="sop" onclick="editorSwitchTab('sop')">🧂 Sel ou Poivre</button>
       </div>
 
       <!-- ====== TAB NUGGETS ====== -->
@@ -554,6 +555,58 @@
         </div>
       </div>
 
+      <!-- ====== TAB SEL OU POIVRE ====== -->
+      <div id="editor-tab-sop" class="editor-tab-content">
+        <div class="editor-section-header">
+          <h3>🧂 Banque Sel ou Poivre</h3>
+          <p class="rule-desc">Affirmations à juger Vrai (SEL) ou Faux (POIVRE), classées par thème. Cette banque sert à les stocker et les retrouver : elle n'est pas utilisée en mode jeu.</p>
+        </div>
+        <div class="editor-form" id="form-sop">
+          <div class="editor-row">
+            <label>Thème</label>
+            <div>
+              <select id="ed-sop-theme" onchange="editorThemeSelectChange(this)">
+                <option value="">— Choisir un thème —</option>
+                <option value="__new__">＋ Nouveau thème…</option>
+              </select>
+              <input type="text" id="ed-sop-theme-new" placeholder="Nom du nouveau thème" style="display:none">
+            </div>
+          </div>
+          <div class="editor-row"><label>Affirmation (FR)</label><textarea id="ed-sop-fr" rows="2" placeholder="Ex : Le ketchup était vendu comme médicament."></textarea></div>
+          <div class="editor-row"><label>Affirmation (EN)</label><textarea id="ed-sop-en" rows="2" placeholder="Statement in English..."></textarea></div>
+          <div class="editor-row">
+            <label>Bonne réponse</label>
+            <select id="ed-sop-answer">
+              <option value="sel">🧂 SEL (Vrai)</option>
+              <option value="poivre">🌶️ POIVRE (Faux)</option>
+            </select>
+          </div>
+          <div class="editor-row"><label>Explication (FR)</label><input type="text" id="ed-sop-expl-fr" placeholder="Optionnel"></div>
+          <div class="editor-row"><label>Explication (EN)</label><input type="text" id="ed-sop-expl-en" placeholder="Optional"></div>
+          <div class="editor-actions">
+            <button class="btn btn-accent" id="ed-sop-save" onclick="editorSaveSop()">💾 Ajouter la question</button>
+            <button class="btn btn-secondary" id="ed-sop-cancel" style="display:none" onclick="editorClearSopForm()">Annuler</button>
+          </div>
+        </div>
+
+        <div class="editor-list-section">
+          <h3>📋 Questions Sel ou Poivre <small id="ed-sop-count"></small></h3>
+          <div class="editor-filter-row">
+            <label>Filtrer par thème :</label>
+            <select id="ed-sop-filter-theme" onchange="editorRenderSopList()">
+              <option value="">Tous les thèmes</option>
+            </select>
+            <label>Réponse :</label>
+            <select id="ed-sop-filter-answer" onchange="editorRenderSopList()">
+              <option value="">Toutes</option>
+              <option value="sel">SEL</option>
+              <option value="poivre">POIVRE</option>
+            </select>
+          </div>
+          <div id="editor-sop-list" class="editor-questions-list"></div>
+        </div>
+      </div>
+
       <!-- Export / Import -->
       <div class="editor-export-section">
         <h3>📦 Import / Export</h3>
@@ -625,9 +678,11 @@
     </div>
   </div>
 
-  <script src="js/i18n.js?v=20251025e"></script>
-  <script src="js/questions.js?v=20251025e"></script>
-  <script src="js/editor.js?v=20251025e"></script>
-  <script src="js/app.js?v=20251025e"></script>
+  <script src="js/i18n.js?v=20251025f"></script>
+  <script src="js/questions.js?v=20251025f"></script>
+  <script src="js/sop_bank.js?v=20251025f"></script>
+  <script src="js/editor.js?v=20251025f"></script>
+  <script src="js/sop_editor.js?v=20251025f"></script>
+  <script src="js/app.js?v=20251025f"></script>
 </body>
 </html>
