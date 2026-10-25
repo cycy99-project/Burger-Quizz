@@ -248,6 +248,41 @@ const Questions_Menus = {
     { fr: "Sous quelle plante s'embrasse-t-on à minuit le 31 décembre pour s'assurer une bonne année ?", en: "Under which plant do people kiss at midnight on December 31 to ensure a good year?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Le gui"], reponse_en: ["Mistletoe"] },
     { fr: "Combien de rennes tirent le traîneau du Père Noël, sans compter Rudolph au nez rouge ?", en: "How many reindeer pull Santa's sleigh, not counting Rudolph the red-nosed one?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["8 (9 avec Rudolph)","8","Huit"], reponse_en: ["8 (9 with Rudolph)","8","Eight"] }
   ],
+  "🎶 Menu Last Christmas, j'ai donné mon cœur… et ma carte bleue": [
+    { fr: "Complétez : « Petit Papa Noël, quand tu descendras du ciel, n'oublie pas mon petit… »", en: "Complete the French carol: 'Petit Papa Noël, when you come down from the sky, don't forget my little…'", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Soulier"], reponse_en: ["Shoe","Soulier"] },
+    { fr: "Quel chanteur a fait de « Petit Papa Noël » un immense tube en 1946 ?", en: "Which singer made 'Petit Papa Noël' a huge hit in 1946?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Tino Rossi"], reponse_en: ["Tino Rossi"] },
+    { fr: "Quel groupe britannique, dont le chanteur s'appelait George Michael, a sorti « Last Christmas » ?", en: "Which British group, whose singer was George Michael, released 'Last Christmas'?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Wham!","Wham"], reponse_en: ["Wham!","Wham"] },
+    { fr: "Quel chanteur irlandais a lancé en 1984 le supergroupe caritatif Band Aid pour « Do They Know It's Christmas? » ?", en: "Which Irish singer launched the charity supergroup Band Aid in 1984 for 'Do They Know It's Christmas?'", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Bob Geldof"], reponse_en: ["Bob Geldof"] },
+    { fr: "Selon la légende, quel animal a rongé l'orgue d'une église autrichienne en 1818, ce qui a poussé à composer « Douce nuit » à la guitare ?", en: "According to legend, which animal gnawed the organ of an Austrian church in 1818, leading 'Silent Night' to be composed for guitar?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Les souris","Une souris"], reponse_en: ["Mice","A mouse"] }
+  ],
+  "🎬 Menu Piège de Noël : Bruce Willis a encore raté le réveillon": [
+    { fr: "Dans quel film Bruce Willis affronte-t-il des terroristes dans une tour le soir de Noël ?", en: "In which film does Bruce Willis fight terrorists in a skyscraper on Christmas Eve?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Piège de cristal","Die Hard"], reponse_en: ["Die Hard"] },
+    { fr: "Quel dessin animé avec Tom Hanks se passe dans un train en route pour le pôle Nord ?", en: "Which animated film starring Tom Hanks takes place on a train headed for the North Pole?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Le Pôle Express","Pôle Express"], reponse_en: ["The Polar Express","Polar Express"] },
+    { fr: "Dans « Love Actually », quel acteur britannique joue le Premier ministre qui se met à danser dans sa résidence de Downing Street ?", en: "In 'Love Actually', which British actor plays the Prime Minister who starts dancing in his Downing Street residence?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Hugh Grant"], reponse_en: ["Hugh Grant"] },
+    { fr: "Dans « Le Père Noël est une ordure », comment s'appelle le service d'écoute téléphonique où travaillent Pierre et Thérèse ?", en: "In 'Le Père Noël est une ordure', what is the name of the telephone helpline where Pierre and Thérèse work?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["SOS Détresse-Amitié","Détresse-Amitié"], reponse_en: ["SOS Détresse-Amitié","Détresse-Amitié"] },
+    { fr: "Quel acteur britannique joue Ebenezer Scrooge dans « Noël chez les Muppets » (1992) ?", en: "Which British actor plays Ebenezer Scrooge in 'The Muppet Christmas Carol' (1992)?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Michael Caine"], reponse_en: ["Michael Caine"] }
+  ],
+  "🧑‍🎄 Menu Le Père Fouettard est au chômage technique": [
+    { fr: "Comment s'appellent les petits ouvriers du Père Noël qui fabriquent les jouets ?", en: "What are Santa's little workers who make the toys called?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Les lutins","Les elfes"], reponse_en: ["Elves","Santa's elves"] },
+    { fr: "Quel personnage accompagne saint Nicolas et punit les enfants pas sages ?", en: "Which character accompanies Saint Nicholas and punishes naughty children?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Le Père Fouettard","Père Fouettard"], reponse_en: ["Père Fouettard","The Whipping Father","Krampus","Black Peter"] },
+    { fr: "Citez l'un des trois Rois mages qui apportent l'or, l'encens et la myrrhe.", en: "Name one of the three Wise Men who bring gold, frankincense and myrrh.", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Gaspard","Melchior","Balthazar"], reponse_en: ["Caspar","Gaspar","Melchior","Balthazar"] },
+    { fr: "Dans quel pays actuel se trouvait la ville de Myre, dont saint Nicolas était l'évêque ?", en: "In which present-day country was the city of Myra, where Saint Nicholas was bishop?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["La Turquie","Turquie"], reponse_en: ["Turkey"] },
+    { fr: "Dans quelle ville de Gironde le secrétariat du Père Noël répond-il au courrier des enfants ?", en: "In which town in the Gironde region does Santa's secretariat answer children's letters?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Libourne"], reponse_en: ["Libourne"] }
+  ],
+  "🍽️ Menu Foie gras, bûche et digestif : papa a trop bu": [
+    { fr: "Quelle pâtisserie en forme de tronc d'arbre termine le repas de Noël ?", en: "Which tree-trunk-shaped pastry ends the Christmas meal?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["La bûche","Bûche de Noël"], reponse_en: ["Yule log","Bûche de Noël"] },
+    { fr: "Quel fruit trouve-t-on traditionnellement au fond de la chaussette de Noël ?", en: "Which fruit is traditionally found at the bottom of the Christmas stocking?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Une orange","Une mandarine","Une clémentine"], reponse_en: ["An orange","A tangerine","A clementine"] },
+    { fr: "Quelle ville alsacienne accueille le Christkindelsmärik, marché de Noël né en 1570 et l'un des plus anciens d'Europe ?", en: "Which Alsatian city hosts the Christkindelsmärik, a Christmas market dating from 1570 and one of the oldest in Europe?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Strasbourg"], reponse_en: ["Strasbourg"] },
+    { fr: "Combien de desserts compte le repas de Noël traditionnel en Provence ?", en: "How many desserts are there in the traditional Christmas meal in Provence?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["13","Treize"], reponse_en: ["13","Thirteen"] },
+    { fr: "Quel pays offre chaque année depuis 1947 le grand sapin de Noël de Trafalgar Square, à Londres ?", en: "Which country has given London the big Christmas tree in Trafalgar Square every year since 1947?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["La Norvège","Norvège"], reponse_en: ["Norway"] }
+  ],
+  "🥂 Menu Résolutions du 1er janvier : arrêter le régime… dès le 2": [
+    { fr: "Que fait-on sauter à minuit pour fêter la nouvelle année ?", en: "What do you pop at midnight to celebrate the new year?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Le bouchon de champagne","Une bouteille de champagne","Le champagne"], reponse_en: ["The champagne cork","A bottle of champagne","Champagne"] },
+    { fr: "Quelle ville américaine laisse tomber une grosse boule lumineuse à Times Square à minuit ?", en: "Which American city drops a giant glowing ball in Times Square at midnight?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["New York"], reponse_en: ["New York","New York City"] },
+    { fr: "Quelle ville d'Australie tire un feu d'artifice spectaculaire autour de son Opéra et de son Harbour Bridge à minuit ?", en: "Which Australian city sets off a spectacular fireworks show around its Opera House and Harbour Bridge at midnight?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Sydney"], reponse_en: ["Sydney"] },
+    { fr: "Quel légume sec, qui ressemble à de petites pièces, mange-t-on en Italie le 31 décembre pour attirer l'argent ?", en: "Which dried legume, resembling little coins, do Italians eat on December 31 to attract money?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Les lentilles","Lentilles"], reponse_en: ["Lentils"] },
+    { fr: "Quelle île du Pacifique, aussi appelée « île de Noël », est l'un des tout premiers endroits habités à passer à la nouvelle année ?", en: "Which Pacific island, also called 'Christmas Island', is one of the very first inhabited places to enter the new year?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Kiritimati","L'île Christmas","Île de Noël"], reponse_en: ["Kiritimati","Christmas Island"] }
+  ],
 };
 
 const Questions_Addition = [
@@ -297,7 +332,12 @@ const MENUS_TITLES = {
   "🧛 Menu Fêtons Halloween au pays de Dracula": { fr: "Fêtons Halloween au pays de Dracula", en: "Let's Celebrate Halloween in Dracula's Homeland" },
   "🐺 Menu Le loup garou boit de la villageoise à défaut de sang": { fr: "Le loup garou boit de la villageoise à défaut de sang", en: "The Werewolf Drinks Villageoise for Lack of Blood" },
   "🦊 Menu La femme du Loup Garou est une garache dans le Poitou": { fr: "La femme du Loup Garou est une garache dans le Poitou", en: "The Werewolf's Wife is a Garache in Poitou" },
-  "🎅 Menu Hot hot hot, le Père Noël a mal au dos": { fr: "Hot hot hot, le Père Noël a mal au dos", en: "Ho ho ho, Santa's got a bad back" }
+  "🎅 Menu Hot hot hot, le Père Noël a mal au dos": { fr: "Hot hot hot, le Père Noël a mal au dos", en: "Ho ho ho, Santa's got a bad back" },
+  "🎶 Menu Last Christmas, j'ai donné mon cœur… et ma carte bleue": { fr: "Last Christmas, j'ai donné mon cœur… et ma carte bleue", en: "Last Christmas, I gave you my heart… and my credit card" },
+  "🎬 Menu Piège de Noël : Bruce Willis a encore raté le réveillon": { fr: "Piège de Noël : Bruce Willis a encore raté le réveillon", en: "Die Hard Christmas: Bruce Willis Missed Another Family Dinner" },
+  "🧑‍🎄 Menu Le Père Fouettard est au chômage technique": { fr: "Le Père Fouettard est au chômage technique", en: "Santa's Whipper Is on Furlough" },
+  "🍽️ Menu Foie gras, bûche et digestif : papa a trop bu": { fr: "Foie gras, bûche et digestif : papa a trop bu", en: "Foie Gras, Yule Log and Digestif: Dad Drank Too Much" },
+  "🥂 Menu Résolutions du 1er janvier : arrêter le régime… dès le 2": { fr: "Résolutions du 1er janvier : arrêter le régime… dès le 2", en: "New Year's Resolutions: Quit Dieting… Starting Tomorrow" }
 };
 
 function menuTitle(key) {
