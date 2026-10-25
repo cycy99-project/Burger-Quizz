@@ -228,7 +228,7 @@ const Questions_Menus = {
   "🧛 Menu Fêtons Halloween au pays de Dracula": [
     { fr: "Où vivait Dracula lorsqu'il n'était pas en déplacement professionnel ?", en: "Where did Dracula live when he was not on a business trip?", theme: "Toile, Toiles, Internet & Horreur", reponse_fr: ["Le Château de Bran", "Château de Bran", "Castelul Bran"], reponse_en: ["Bran Castle", "Castelul Bran", "Dracula's Castle"] },
     { fr: "De quel personnage est inspiré le comte Dracula ? Donnez un de ses noms célèbres (au moins le nom ou le prénom en roumain).", en: "Which historical figure inspired Count Dracula? Give one of his famous names (at least the first or last name in Romanian).", theme: "Toile, Toiles, Internet & Horreur", reponse_fr: ["Vlad Tepes", "Vlad Dracul", "Vlad l'Empaleur", "Vlad"], reponse_en: ["Vlad the Impaler", "Vlad Tepes", "Vlad Dracul", "Vlad"] },
-    { fr: "Quels bonbons Dracula aurait-il pu offrir aux enfants à Halloween ?", en: "What candies could Dracula have offered to kids at Halloween?", theme: "Toile, Toiles, Internet & Horreur", reponse_fr: ["Bonbons Dracula", "Dents de vampire", "Trolli"], reponse_en: ["Dracula candies", "Vampire teeth", "Trolli"] },
+    { fr: "Quels bonbons Dracula aurait-il pu offrir aux enfants à Halloween ?", en: "What candies could Dracula have offered to kids at Halloween?", theme: "Toile, Toiles, Internet & Horreur", reponse_fr: ["Dents de vampire", "Trolli"], reponse_en: ["Dracula candies", "Vampire teeth", "Trolli"] },
     { fr: "Citez un élément qu'un Vampire ne doit pas se faire enfoncer.", en: "Name one item that a vampire really doesn't want driven into him.", theme: "Toile, Toiles, Internet & Horreur", reponse_fr: ["Crucifix", "Ail", "Pieu"], reponse_en: ["Crucifix", "Garlic", "Stake"] },
     { fr: "Citez un acteur qui a interprété le rôle de Dracula au cinéma.", en: "Name an actor who played Dracula on the big screen.", theme: "Toile, Toiles, Internet & Horreur", reponse_fr: ["Bela Lugosi", "Gary Oldman", "Christopher Lee", "Luke Evans", "Gerard Butler"], reponse_en: ["Bela Lugosi", "Gary Oldman", "Christopher Lee", "Luke Evans", "Gerard Butler"] }
   ],
@@ -341,7 +341,7 @@ const Questions_Menus = {
     { fr: "Quel fruit serait tombé sur la tête de Newton et lui aurait fait découvrir la gravité ?", en: "Which fruit supposedly fell on Newton's head and led him to discover gravity?", theme: "Culture générale", reponse_fr: ["La pomme","Une pomme"], reponse_en: ["Apple","An apple"] },
     { fr: "Quel savant français a inventé la vaccination contre la rage et le procédé qui porte son nom pour conserver le lait ?", en: "Which French scientist developed the rabies vaccine and the process named after him to preserve milk?", theme: "Culture générale", reponse_fr: ["Louis Pasteur","Pasteur"], reponse_en: ["Louis Pasteur","Pasteur"] },
     { fr: "Quel appareil de cuisine est né quand une barre chocolatée a fondu dans la poche de l'ingénieur Percy Spencer près d'un radar ?", en: "Which kitchen appliance was born when a chocolate bar melted in engineer Percy Spencer's pocket near a radar?", theme: "Culture générale", reponse_fr: ["Le four à micro-ondes","Micro-ondes"], reponse_en: ["The microwave oven","Microwave"] },
-    { fr: "Quel biscuit est né en 1938 d'une erreur de recette de Ruth Wakefield, qui espérait que les morceaux de chocolat fondraient ?", en: "Which cookie was born in 1938 from Ruth Wakefield's recipe mistake, when she hoped the chocolate pieces would melt?", theme: "Culture générale", reponse_fr: ["Le cookie aux pépites de chocolat","Cookie","Cookies"], reponse_en: ["The chocolate chip cookie","Cookie","Cookies"] },
+    { fr: "Quel biscuit est né en 1938 d'une erreur de recette de Ruth Wakefield, qui espérait que les morceaux de chocolat fondraient ?", en: "Which famous baked treat was born in 1938 from Ruth Wakefield's recipe mistake, when she hoped the chocolate pieces would melt?", theme: "Culture générale", reponse_fr: ["Le cookie aux pépites de chocolat","Cookie","Cookies"], reponse_en: ["The chocolate chip cookie","Cookie","Cookies"] },
     { fr: "Quel petit papier, né d'une colle ratée chez 3M qui ne collait pas assez, s'arrache et se recolle partout ?", en: "Which small note, born from a failed glue at 3M that wasn't sticky enough, peels off and sticks again anywhere?", theme: "Culture générale", reponse_fr: ["Le Post-it","Post-it"], reponse_en: ["The Post-it","Post-it"] }
   ],
   "🧭 Menu Géographie pour touristes perdus": [
@@ -378,20 +378,6 @@ const Questions_Menus = {
     { fr: "« Un grand pouvoir implique de grandes responsabilités. » De quel film ?", en: "'With great power comes great responsibility.' From which film?", theme: "Culture générale", reponse_fr: ["Spider-Man"], reponse_en: ["Spider-Man"] },
     { fr: "« N'est stupide que la stupidité ! » De quel film ?", en: "'Stupid is as stupid does!' From which film?", theme: "Culture générale", reponse_fr: ["Forrest Gump"], reponse_en: ["Forrest Gump"] },
     { fr: "« C'était pas mauvais, c'était très mauvais ! » De quel film ?", en: "'It wasn't bad, it was very bad!' From which French film?", theme: "Culture générale", reponse_fr: ["La Grande Vadrouille"], reponse_en: ["La Grande Vadrouille (Don't Look Now… We're Being Shot At)"] }
-  ],
-  "🍔 Menu Vrai ou Faux n°3 : le fast-food": [
-    { fr: "Vrai ou Faux : il existe un emoji officiel du hamburger.", en: "True or False: there is an official hamburger emoji.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
-    { fr: "Vrai ou Faux : un hamburger contient obligatoirement du jambon.", en: "True or False: a hamburger must contain ham.", theme: "Culture générale", reponse_fr: ["Faux (son nom vient de Hambourg)","Faux"], reponse_en: ["False (its name comes from Hamburg)","False"] },
-    { fr: "Vrai ou Faux : les nuggets ont été inventés dans les années 1950.", en: "True or False: nuggets were invented in the 1950s.", theme: "Culture générale", reponse_fr: ["Faux (1963)","Faux"], reponse_en: ["False (1963)","False"] },
-    { fr: "Vrai ou Faux : Burger King a ouvert avant McDonald's.", en: "True or False: Burger King opened before McDonald's.", theme: "Culture générale", reponse_fr: ["Faux (McDo 1940, Burger King 1954)","Faux"], reponse_en: ["False (McDonald's 1940, Burger King 1954)","False"] },
-    { fr: "Vrai ou Faux : le record du plus gros burger pèse plus d'une tonne.", en: "True or False: the record for the biggest burger weighs over a ton.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] }
-  ],
-  "🍟 Menu Vrai ou Faux n°4 : burgers autour du monde": [
-    { fr: "Vrai ou Faux : le cornichon est en réalité un petit concombre.", en: "True or False: a gherkin is actually a small cucumber.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
-    { fr: "Vrai ou Faux : les frites sont plus populaires que les burgers aux États-Unis.", en: "True or False: French fries are more popular than burgers in the USA.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
-    { fr: "Vrai ou Faux : le Big Mac a été inventé en France.", en: "True or False: the Big Mac was invented in France.", theme: "Culture générale", reponse_fr: ["Faux (Pennsylvanie, 1967)","Faux"], reponse_en: ["False (Pennsylvania, 1967)","False"] },
-    { fr: "Vrai ou Faux : le Japon propose des burgers au Kit-Kat.", en: "True or False: Japan offers Kit-Kat burgers.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
-    { fr: "Vrai ou Faux : la France est le 2e marché de McDonald's au monde.", en: "True or False: France is McDonald's 2nd biggest market worldwide.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] }
   ],
   "🥫 Menu Vrai ou Faux n°5 : sauces, mots et mythes": [
     { fr: "Vrai ou Faux : le Coca-Cola était vert à l'origine.", en: "True or False: Coca-Cola was originally green.", theme: "Culture générale", reponse_fr: ["Faux (mythe urbain)","Faux"], reponse_en: ["False (urban myth)","False"] },
@@ -468,8 +454,6 @@ const MENUS_TITLES = {
   "🔬 Menu Sciences naturelles": { fr: "Sciences naturelles", en: "Natural Sciences" },
   "🔁 Menu Faux ou Vrai": { fr: "Faux ou Vrai", en: "False or True" },
   "🎬 Menu Répliques cultes de films": { fr: "Répliques cultes de films", en: "Cult Movie Quotes" },
-  "🍔 Menu Vrai ou Faux n°3 : le fast-food": { fr: "Vrai ou Faux n°3 : le fast-food", en: "True or False #3: Fast Food" },
-  "🍟 Menu Vrai ou Faux n°4 : burgers autour du monde": { fr: "Vrai ou Faux n°4 : burgers autour du monde", en: "True or False #4: Burgers Around the World" },
   "🥫 Menu Vrai ou Faux n°5 : sauces, mots et mythes": { fr: "Vrai ou Faux n°5 : sauces, mots et mythes", en: "True or False #5: Sauces, Words and Myths" }
 };
 

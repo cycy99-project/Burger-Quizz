@@ -521,6 +521,12 @@ function editorRenderNuggetsList() {
   }).join('');
 }
 
+function editorAnswersHtml(q) {
+  const esc = x => String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const a = (q.reponse_fr || []).map(esc).join(' / ');
+  return a ? `<div class="em-answers">✅ ${a}</div>` : '';
+}
+
 function editorRenderMenusList() {
   const container = document.getElementById('editor-menus-list');
   const customList = editorLoadMenus();
@@ -539,7 +545,7 @@ function editorRenderMenusList() {
       const theme = liveQs[0]?.theme || '-';
       const ov = overrides[key];
       const title = ov && ov.name ? `${ov.emoji || ''} Menu ${ov.name}` : key;
-      const qs = liveQs.map(q => `<li>${q.fr}</li>`).join('');
+      const qs = liveQs.map(q => `<li>${q.fr}${editorAnswersHtml(q)}</li>`).join('');
       const badge = ov ? '<span class="eq-badge-edited">modifié</span>' : '';
       const resetBtn = ov ? `<button class="eq-delete" title="Restaurer l'original" onclick="editorResetMenuOverride('${key.replace(/'/g, "\\'")}')">↺ Restaurer</button>` : '';
       return `<div class="editor-menu-card">
@@ -561,7 +567,7 @@ function editorRenderMenusList() {
   if (customFiltered.length) {
     html += '<h4 class="editor-list-subtitle" style="margin-top:20px">Menus personnalisés</h4>';
     html += customFiltered.map(m => {
-      const qs = m.questions.map(q => `<li>${q.fr}</li>`).join('');
+      const qs = m.questions.map(q => `<li>${q.fr}${editorAnswersHtml(q)}</li>`).join('');
       return `<div class="editor-menu-card">
         <div class="em-header">
           <span class="em-title">${m.emoji} ${m.name} <span class="eq-badge-custom">custom</span></span>
