@@ -125,6 +125,7 @@ function editorRenderSopList() {
   }
   container.innerHTML = filtered.map(r => {
     const q = r.q;
+    if (q.type === 'classement') return sopRenderClassement(q);
     const ans = q.answer === 'sel' ? '🧂 SEL (Vrai)' : '🌶️ POIVRE (Faux)';
     const badge = r.builtin ? '<span class="eq-badge-edited">fichier</span>' : '<span class="eq-badge-custom">custom</span>';
     const actions = r.builtin ? '' :
@@ -139,6 +140,23 @@ function editorRenderSopList() {
       <div class="eq-actions">${actions}</div>
     </div>`;
   }).join('');
+}
+
+// Question de type "classement" : un titre, des options, et une liste d'éléments à classer
+function sopRenderClassement(q) {
+  const label = k => { const o = q.options.find(x => x.key === k); return o ? o.fr : k; };
+  const opts = q.options.map(o => sopEscape(o.fr)).join(' / ');
+  const items = q.items.map(i =>
+    `<li>${sopEscape(i.fr)} → <span class="eq-correct">${sopEscape(label(i.answer))}</span>${i.note_fr ? ' <em>(' + sopEscape(i.note_fr) + ')</em>' : ''}</li>`).join('');
+  return `<div class="editor-q-card">
+    <div class="eq-body">
+      <span class="eq-theme">${sopEscape(q.theme)}</span><span class="eq-badge-edited">fichier</span><span class="eq-level">classement · ${q.items.length} éléments</span>
+      <div class="eq-text">${sopEscape(q.fr)}</div>
+      <div class="eq-choices">Options : ${opts}</div>
+      <details><summary>Voir les éléments et réponses</summary><ul>${items}</ul></details>
+    </div>
+    <div class="eq-actions"></div>
+  </div>`;
 }
 
 function sopInit() {
