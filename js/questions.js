@@ -358,6 +358,27 @@ const Questions_Menus = {
     { fr: "Complétez : « Casser sa… », c'est mourir.", en: "Complete the French expression: 'To break one's …', meaning to die.", theme: "Culture générale", reponse_fr: ["Pipe"], reponse_en: ["Pipe"] },
     { fr: "Complétez : « Revenons à nos… », expression tirée de la farce de Maître Pathelin.", en: "Complete the French expression from the farce 'Maître Pathelin': 'Let's get back to our…' (meaning: back to the subject)", theme: "Culture générale", reponse_fr: ["Moutons"], reponse_en: ["Sheep","Moutons"] }
   ],
+  "🔬 Menu Sciences naturelles": [
+    { fr: "Outre l'éléphant, quel animal possède une trompe ?", en: "Besides the elephant, which animal has a trunk (or proboscis)?", theme: "Culture générale", reponse_fr: ["Le tapir","Le moustique","Le papillon","La punaise","Le colibri","L'éléphant de mer"], reponse_en: ["Tapir","Mosquito","Butterfly","Bug","Hummingbird","Elephant seal"] },
+    { fr: "Quel fruit porte ses pépins à l'extérieur plutôt qu'à l'intérieur ?", en: "Which fruit carries its seeds on the outside rather than the inside?", theme: "Culture générale", reponse_fr: ["La fraise"], reponse_en: ["Strawberry"] },
+    { fr: "Quand il pousse son cri, quel oiseau « turlutte », « grisolle » ou « tirelire » ?", en: "Which bird, when it sings, is said to 'turlutte', 'grisolle' or 'tirelire' (French verbs for its song)?", theme: "Culture générale", reponse_fr: ["L'alouette"], reponse_en: ["The lark","Skylark"] },
+    { fr: "Vrai ou Faux : les empreintes des koalas sont si proches de celles des humains qu'au microscope elles peuvent être difficiles à distinguer dans une enquête criminelle ?", en: "True or False: koala fingerprints are so close to human ones that under a microscope they can be hard to tell apart in a criminal investigation?", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
+    { fr: "Quels animaux peuvent survivre des années sans boire une goutte d'eau ?", en: "Which animals can survive for years without a drop of water?", theme: "Culture générale", reponse_fr: ["L'escargot","Le tardigrade","Le rotifère"], reponse_en: ["Snail","Tardigrade","Rotifer"] }
+  ],
+  "🔁 Menu Faux ou Vrai": [
+    { fr: "Vrai ou Faux : les baleines bleues sont la plus grande créature à avoir jamais vécu sur Terre.", en: "True or False: blue whales are the largest creature ever to have lived on Earth.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
+    { fr: "Vrai ou Faux : les requins sont les seuls animaux qui ne tombent jamais malades, immunisés contre toutes les maladies, y compris le cancer.", en: "True or False: sharks are the only animals that never get sick, immune to every disease, including cancer.", theme: "Culture générale", reponse_fr: ["Faux (c'est un mythe : les requins peuvent avoir un cancer)","Faux"], reponse_en: ["False (it's a myth: sharks can get cancer)","False"] },
+    { fr: "Vrai ou Faux : les perroquets sauvages donnent des noms à leurs petits.", en: "True or False: wild parrots give names to their chicks.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
+    { fr: "Vrai ou Faux : les oiseaux n'urinent pas.", en: "True or False: birds don't urinate.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] },
+    { fr: "Vrai ou Faux : le Mauna Kea, à Hawaï, est la plus haute montagne du monde depuis sa base.", en: "True or False: Mauna Kea in Hawaii is the tallest mountain in the world measured from its base.", theme: "Culture générale", reponse_fr: ["Vrai"], reponse_en: ["True"] }
+  ],
+  "🎬 Menu Répliques cultes de films": [
+    { fr: "« Tu vois, le monde se divise en deux catégories : ceux qui ont un pistolet chargé et ceux qui creusent. Toi, tu creuses. » De quel film ?", en: "'You see, in this world there's two kinds of people: those with loaded guns and those who dig. You dig.' From which film?", theme: "Culture générale", reponse_fr: ["Le Bon, la Brute et le Truand"], reponse_en: ["The Good, the Bad and the Ugly"] },
+    { fr: "« Si tu veux un conseil, oublie que t'as aucune chance, on sait jamais, sur un malentendu ça peut marcher. » De quel film ?", en: "'If you want some advice, forget that you've got no chance, you never know, on a misunderstanding it might work.' From which French film?", theme: "Culture générale", reponse_fr: ["Les Bronzés font du ski"], reponse_en: ["Les Bronzés font du ski"] },
+    { fr: "« Un grand pouvoir implique de grandes responsabilités. » De quel film ?", en: "'With great power comes great responsibility.' From which film?", theme: "Culture générale", reponse_fr: ["Spider-Man"], reponse_en: ["Spider-Man"] },
+    { fr: "« N'est stupide que la stupidité ! » De quel film ?", en: "'Stupid is as stupid does!' From which film?", theme: "Culture générale", reponse_fr: ["Forrest Gump"], reponse_en: ["Forrest Gump"] },
+    { fr: "« C'était pas mauvais, c'était très mauvais ! » De quel film ?", en: "'It wasn't bad, it was very bad!' From which French film?", theme: "Culture générale", reponse_fr: ["La Grande Vadrouille"], reponse_en: ["La Grande Vadrouille (Don't Look Now… We're Being Shot At)"] }
+  ],
 };
 
 const Questions_Addition = [
@@ -422,7 +443,10 @@ const MENUS_TITLES = {
   "🦥 Menu Les animaux, ces grands philosophes": { fr: "Les animaux, ces grands philosophes", en: "Animals, Those Great Philosophers" },
   "💡 Menu Génies et grosses bêtises : les inventions par accident": { fr: "Génies et grosses bêtises : les inventions par accident", en: "Geniuses and Blunders: Accidental Inventions" },
   "🧭 Menu Géographie pour touristes perdus": { fr: "Géographie pour touristes perdus", en: "Geography for Lost Tourists" },
-  "🐔 Menu Les expressions françaises, c'est pas du gâteau": { fr: "Les expressions françaises, c'est pas du gâteau", en: "French Expressions Are No Piece of Cake" }
+  "🐔 Menu Les expressions françaises, c'est pas du gâteau": { fr: "Les expressions françaises, c'est pas du gâteau", en: "French Expressions Are No Piece of Cake" },
+  "🔬 Menu Sciences naturelles": { fr: "Sciences naturelles", en: "Natural Sciences" },
+  "🔁 Menu Faux ou Vrai": { fr: "Faux ou Vrai", en: "False or True" },
+  "🎬 Menu Répliques cultes de films": { fr: "Répliques cultes de films", en: "Cult Movie Quotes" }
 };
 
 function menuTitle(key) {
