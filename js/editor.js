@@ -655,6 +655,8 @@ function editorExportJSON() {
     nuggets: editorLoadNuggets(),
     menus: editorLoadMenus(),
     sop: typeof editorLoadSop === 'function' ? editorLoadSop() : [],
+    addition: typeof bankLoad === 'function' ? bankLoad('add') : [],
+    bdm: typeof bankLoad === 'function' ? bankLoad('bdm') : [],
     overrides_nuggets: editorLoadOverrideNuggets(),
     overrides_menus: editorLoadOverrideMenus()
   };
@@ -691,6 +693,13 @@ function editorImportJSON(event) {
         sopRefreshThemeDropdowns();
         editorRenderSopList();
       }
+      ['add', 'bdm'].forEach(k => {
+        const arr = data[k === 'add' ? 'addition' : 'bdm'];
+        if (!Array.isArray(arr) || typeof bankLoad !== 'function') return;
+        arr.forEach(q => { q._id = Date.now() + Math.random() * 1000 | 0; q._custom = true; });
+        bankSaveList(k, [...bankLoad(k), ...arr]);
+        bankRenderList(k);
+      });
       if (data.overrides_nuggets && typeof data.overrides_nuggets === 'object') {
         const cur = editorLoadOverrideNuggets();
         editorSaveOverrideNuggets({ ...cur, ...data.overrides_nuggets });
@@ -717,6 +726,8 @@ function editorClearAll() {
   localStorage.removeItem(LS_CUSTOM_NUGGETS);
   localStorage.removeItem(LS_CUSTOM_MENUS);
   localStorage.removeItem('burgerquiz_custom_sop');
+  localStorage.removeItem('burgerquiz_custom_addition');
+  localStorage.removeItem('burgerquiz_custom_bdm');
   localStorage.removeItem(LS_OVERRIDE_NUGGETS);
   localStorage.removeItem(LS_OVERRIDE_MENUS);
   editorInjectCustomQuestions();
@@ -724,6 +735,7 @@ function editorClearAll() {
   editorRenderNuggetsList();
   editorRenderMenusList();
   if (typeof editorRenderSopList === 'function') { sopRefreshThemeDropdowns(); editorRenderSopList(); }
+  if (typeof bankInit === 'function') bankInit();
   showToast('Tout a été restauré.');
 }
 
