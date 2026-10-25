@@ -241,6 +241,13 @@ const Questions_Menus = {
     { fr: "Comment s'appelle la femme du dindon ?", en: "What do we call the female of the turkey (dindon)?", theme: "Toile, Toiles, Internet & Horreur", reponse_fr: ["Dinde", "La dinde"], reponse_en: ["Turkey hen", "Hen"] },
     { fr: "Citez une actrice de films d'horreur avec le film associé (nom du perso ou de l'actrice + nom du film).", en: "Name a horror-film actress with her film (character or actress name + film name).", theme: "Toile, Toiles, Internet & Horreur", reponse_fr: ["Jamie Lee Curtis dans Halloween", "Heather Langenkamp / Nancy Thompson dans Freddy", "Ellen Ripley / Sigourney Weaver dans Alien", "Rosemary dans Rosemary's Baby", "Jodie Foster / Clarice Starling dans Le Silence des agneaux", "Lorraine Warren dans Conjuring"], reponse_en: ["Jamie Lee Curtis in Halloween", "Heather Langenkamp / Nancy Thompson in A Nightmare on Elm Street", "Ellen Ripley / Sigourney Weaver in Alien", "Rosemary in Rosemary's Baby", "Jodie Foster / Clarice Starling in The Silence of the Lambs", "Lorraine Warren in The Conjuring"] }
   ],
+  "🎅 Menu Hot hot hot, le Père Noël a mal au dos": [
+    { fr: "Quel oiseau passe l'année à manger tranquillement, puis finit farci aux marrons le soir du 24 ?", en: "Which bird spends the year eating peacefully, then ends up stuffed with chestnuts on December 24?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["La dinde","Le dindon","Le chapon"], reponse_en: ["Turkey","Capon"] },
+    { fr: "Quel cadeau pas du tout prévu reçoit-on chaque année de sa mamie, qu'on porte une fois puis qu'on cache au fond d'un tiroir ?", en: "What unplanned gift do you get from your grandma every year, wear once, then bury at the bottom of a drawer?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Un pull (moche)","Des chaussettes","Une écharpe"], reponse_en: ["A (ugly) sweater","Socks","A scarf"] },
+    { fr: "Quel est le point commun entre le Père Noël et un cambrioleur ?", en: "What do Santa and a burglar have in common?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Ils entrent par la cheminée","Ils passent la nuit chez les gens","Ils ont un grand sac","Ils entrent sans sonner"], reponse_en: ["They come down the chimney","They visit homes at night","They carry a big sack","They enter without ringing the bell"] },
+    { fr: "Sous quelle plante s'embrasse-t-on à minuit le 31 décembre pour s'assurer une bonne année ?", en: "Under which plant do people kiss at midnight on December 31 to ensure a good year?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["Le gui"], reponse_en: ["Mistletoe"] },
+    { fr: "Combien de rennes tirent le traîneau du Père Noël, sans compter Rudolph au nez rouge ?", en: "How many reindeer pull Santa's sleigh, not counting Rudolph the red-nosed one?", theme: "Noël & Saint-Sylvestre", reponse_fr: ["8 (9 avec Rudolph)","8","Huit"], reponse_en: ["8 (9 with Rudolph)","8","Eight"] }
+  ],
 };
 
 const Questions_Addition = [
@@ -289,7 +296,8 @@ const MENUS_TITLES = {
   "🔪 Menu Le serial killer a une araignée au plafond": { fr: "Le serial killer a une araignée au plafond", en: "The Serial Killer Has a Spider on the Ceiling" },
   "🧛 Menu Fêtons Halloween au pays de Dracula": { fr: "Fêtons Halloween au pays de Dracula", en: "Let's Celebrate Halloween in Dracula's Homeland" },
   "🐺 Menu Le loup garou boit de la villageoise à défaut de sang": { fr: "Le loup garou boit de la villageoise à défaut de sang", en: "The Werewolf Drinks Villageoise for Lack of Blood" },
-  "🦊 Menu La femme du Loup Garou est une garache dans le Poitou": { fr: "La femme du Loup Garou est une garache dans le Poitou", en: "The Werewolf's Wife is a Garache in Poitou" }
+  "🦊 Menu La femme du Loup Garou est une garache dans le Poitou": { fr: "La femme du Loup Garou est une garache dans le Poitou", en: "The Werewolf's Wife is a Garache in Poitou" },
+  "🎅 Menu Hot hot hot, le Père Noël a mal au dos": { fr: "Hot hot hot, le Père Noël a mal au dos", en: "Ho ho ho, Santa's got a bad back" }
 };
 
 function menuTitle(key) {
