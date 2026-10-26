@@ -2,7 +2,7 @@
    BURGER QUIZ — Éditeur des banques "L'Addition" et "Burger de la Mort"
    - Questions natives : js/addition_bank.js / js/bdm_bank.js (lecture seule ici)
    - Questions ajoutées dans l'éditeur : localStorage
-   - Thème unique : Culture générale ; non utilisées en mode jeu
+   - Thème par défaut : Culture générale (modifiable) ; non utilisées en mode jeu
    - Affichage groupé : par série (Addition) ou par burger (Burger de la Mort)
    ============================================================ */
 
@@ -33,6 +33,7 @@ function bankClearForm(k) {
   ['fr', 'en', 'ans-fr', 'ans-en'].forEach(s => { bankEl(k, s).value = ''; });
   if (BANKS[k].timer) bankEl(k, 'timer').value = 30;
   bankEl(k, 'group').value = '';
+  bankEl(k, 'theme').value = BANK_THEME;
   if (bankEl(k, 'group-en')) bankEl(k, 'group-en').value = '';
   _bankEditing[k] = null;
   bankEl(k, 'save').textContent = '💾 Ajouter la question';
@@ -50,7 +51,7 @@ function bankSave(k) {
   const data = {
     fr, en: bankEl(k, 'en').value.trim() || fr,
     answer_fr: ansFr, answer_en: bankEl(k, 'ans-en').value.trim() || ansFr,
-    theme: BANK_THEME
+    theme: bankEl(k, 'theme').value.trim() || BANK_THEME
   };
   data[cfg.group] = group;
   if (cfg.groupEn) data[cfg.groupEn] = bankEl(k, 'group-en').value.trim() || group;
@@ -79,6 +80,7 @@ function bankStartEdit(k, id) {
   bankEl(k, 'ans-fr').value = q.answer_fr;
   bankEl(k, 'ans-en').value = q.answer_en;
   bankEl(k, 'group').value = q[cfg.group] || '';
+  bankEl(k, 'theme').value = q.theme || BANK_THEME;
   if (cfg.groupEn) bankEl(k, 'group-en').value = q[cfg.groupEn] || '';
   if (cfg.timer) bankEl(k, 'timer').value = q.timer || 30;
   bankEl(k, 'save').textContent = '💾 Enregistrer les modifications';
@@ -106,7 +108,15 @@ function bankRenderList(k) {
   sel.value = names.includes(prev) ? prev : '';
   bankEl(k, 'group-list').innerHTML = names.map(n => `<option value="${bankEsc(n)}">`).join('');
 
+  const themes = [...new Set([BANK_THEME, ...all.map(r => r.q.theme || BANK_THEME)])];
+  const tsel = bankEl(k, 'filter-theme');
+  const tprev = tsel.value;
+  tsel.innerHTML = '<option value="">Tous</option>' + themes.map(t => `<option value="${bankEsc(t)}">${bankEsc(t)}</option>`).join('');
+  tsel.value = themes.includes(tprev) ? tprev : '';
+  bankEl(k, 'theme-list').innerHTML = themes.map(t => `<option value="${bankEsc(t)}">`).join('');
+
   const rows = all
+    .filter(r => !tsel.value || (r.q.theme || BANK_THEME) === tsel.value)
     .filter(r => !sel.value || groupOf(r.q) === sel.value)
     .filter(r => !search || (r.q.fr + ' ' + r.q.answer_fr + ' ' + groupOf(r.q)).toLowerCase().includes(search));
   bankEl(k, 'count').textContent = `${rows.length} question(s) · ${new Set(rows.map(r => groupOf(r.q))).size} ${cfg.timer ? 'burger(s)' : 'série(s)'}`;
@@ -131,7 +141,7 @@ function bankRenderList(k) {
     const open = search || _bankOpen[k].has(name) ? ' open' : '';
     return `<details class="editor-menu-card"${open} ontoggle="bankToggle('${k}', this.dataset.name, this.open)" data-name="${bankEsc(name)}">
       <summary class="em-header"><span class="em-title">${cfg.icon} ${bankEsc(name)}</span>
-        <span class="em-theme">${items.length} question(s) · ${BANK_THEME}</span></summary>
+        <span class="em-theme">${items.length} question(s) · ${bankEsc(items[0].q.theme || BANK_THEME)}</span></summary>
       <ul class="em-questions">${lis}</ul>
     </details>`;
   }).join('');

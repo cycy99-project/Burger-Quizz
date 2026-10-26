@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🍔 Burger Quiz - Les Animateurs</title>
-  <link rel="stylesheet" href="css/style.css?v=20251025m">
+  <link rel="stylesheet" href="css/style.css?v=20251025n">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -613,9 +613,10 @@
       <div id="editor-tab-add" class="editor-tab-content">
         <div class="editor-section-header">
           <h3>🧾 Banque L'Addition</h3>
-          <p class="rule-desc">Questions regroupées par série (ex. « Mais il bouffe quoi ? » : un indice par ligne, chacun avec sa réponse). Thème unique : Culture générale. Cette banque sert à stocker et retrouver les questions : elle n'est pas utilisée en mode jeu.</p>
+          <p class="rule-desc">Questions regroupées par série (ex. « Mais il bouffe quoi ? » : un indice par ligne, chacun avec sa réponse). Thème au choix (Culture générale par défaut). Cette banque sert à stocker et retrouver les questions : elle n'est pas utilisée en mode jeu.</p>
         </div>
         <div class="editor-form" id="form-add">
+          <div class="editor-row"><label>Thème</label><input type="text" id="ed-add-theme" list="ed-add-theme-list" value="Culture générale"><datalist id="ed-add-theme-list"></datalist></div>
           <div class="editor-row"><label>Série (titre FR)</label><input type="text" id="ed-add-group" list="ed-add-group-list" placeholder="Ex : Mais il bouffe quoi ?"><datalist id="ed-add-group-list"></datalist></div>
           <div class="editor-row"><label>Série (titre EN)</label><input type="text" id="ed-add-group-en" placeholder="Series title in English (optional)"></div>
           <div class="editor-row"><label>Indice (FR)</label><textarea id="ed-add-fr" rows="2" placeholder="Ex : Popeye"></textarea></div>
@@ -632,6 +633,8 @@
           <div class="editor-filter-row">
             <label>Série :</label>
             <select id="ed-add-filter-group" onchange="bankRenderList('add')"><option value="">Toutes</option></select>
+            <label>Thème :</label>
+            <select id="ed-add-filter-theme" onchange="bankRenderList('add')"><option value="">Tous</option></select>
             <label>Rechercher :</label>
             <input type="text" id="ed-add-search" placeholder="Mot de la question ou de la réponse" oninput="bankRenderList('add')">
           </div>
@@ -643,9 +646,10 @@
       <div id="editor-tab-bdm" class="editor-tab-content">
         <div class="editor-section-header">
           <h3>💀 Banque Burger de la Mort</h3>
-          <p class="rule-desc">Défis regroupés par burger (10 questions par burger), chacun avec sa réponse attendue. Thème unique : Culture générale. Cette banque sert à stocker et retrouver les questions : elle n'est pas utilisée en mode jeu.</p>
+          <p class="rule-desc">Défis regroupés par burger (10 questions par burger), chacun avec sa réponse attendue. Thème au choix (Culture générale par défaut). Cette banque sert à stocker et retrouver les questions : elle n'est pas utilisée en mode jeu.</p>
         </div>
         <div class="editor-form" id="form-bdm">
+          <div class="editor-row"><label>Thème</label><input type="text" id="ed-bdm-theme" list="ed-bdm-theme-list" value="Culture générale"><datalist id="ed-bdm-theme-list"></datalist></div>
           <div class="editor-row"><label>Question (FR)</label><textarea id="ed-bdm-fr" rows="2" placeholder="Ex : Citez 5 fromages français."></textarea></div>
           <div class="editor-row"><label>Question (EN)</label><textarea id="ed-bdm-en" rows="2" placeholder="Question in English..."></textarea></div>
           <div class="editor-row"><label>Réponse (FR)</label><textarea id="ed-bdm-ans-fr" rows="2" placeholder="Ex : Brie, Comté, Camembert, Roquefort, Cantal…"></textarea></div>
@@ -660,9 +664,11 @@
         <div class="editor-list-section">
           <h3>📋 Questions Burger de la Mort <small id="ed-bdm-count"></small></h3>
           <div class="editor-filter-row">
-            <label>Rechercher :</label>
+            <label>Thème :</label>
+            <select id="ed-bdm-filter-theme" onchange="bankRenderList('bdm')"><option value="">Tous</option></select>
             <label>Burger :</label>
             <select id="ed-bdm-filter-group" onchange="bankRenderList('bdm')"><option value="">Tous</option></select>
+            <label>Rechercher :</label>
             <input type="text" id="ed-bdm-search" placeholder="Mot de la question ou de la réponse" oninput="bankRenderList('bdm')">
           </div>
           <div id="editor-bdm-list" class="editor-questions-list"></div>
@@ -740,14 +746,14 @@
     </div>
   </div>
 
-  <script src="js/i18n.js?v=20251025m"></script>
-  <script src="js/questions.js?v=20251025m"></script>
-  <script src="js/addition_bank.js?v=20251025m"></script>
-  <script src="js/bdm_bank.js?v=20251025m"></script>
-  <script src="js/sop_bank.js?v=20251025m"></script>
-  <script src="js/editor.js?v=20251025m"></script>
-  <script src="js/sop_editor.js?v=20251025m"></script>
-  <script src="js/bank_editor.js?v=20251025m"></script>
-  <script src="js/app.js?v=20251025m"></script>
+  <script src="js/i18n.js?v=20251025n"></script>
+  <script src="js/questions.js?v=20251025n"></script>
+  <script src="js/addition_bank.js?v=20251025n"></script>
+  <script src="js/bdm_bank.js?v=20251025n"></script>
+  <script src="js/sop_bank.js?v=20251025n"></script>
+  <script src="js/editor.js?v=20251025n"></script>
+  <script src="js/sop_editor.js?v=20251025n"></script>
+  <script src="js/bank_editor.js?v=20251025n"></script>
+  <script src="js/app.js?v=20251025n"></script>
 </body>
 </html>
