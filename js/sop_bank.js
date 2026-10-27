@@ -80,7 +80,7 @@ const SOP_BANK = [
     {"fr":"Peut être bloqué sans prévenir.","en":"Can get blocked without warning.","answer":"deux"},
     {"fr":"Si je dis « j'ai du tracas jusqu'au cou », c'est que j'ai besoin de… ?","en":"If I say 'I'm up to my neck in troubles', what do I need?","answer":"toilettes"},
     {"fr":"Il y a parfois des fuites.","en":"There are sometimes leaks.","answer":"deux"}
-  ], theme: "Internet" },
+  ], theme: "Halloween" },
   { type: "classement", fr: "Loup-Garou, Garou ou les deux ?", en: "Werewolf, Garou (the singer) or both?", options: [{"key":"loup","fr":"Loup-Garou","en":"Werewolf"},{"key":"garou","fr":"Garou","en":"Garou"},{"key":"deux","fr":"Les deux","en":"Both"}], items: [
     {"fr":"On ne l'entend hurler que les soirs de pleine lune.","en":"You only hear him howl on full-moon nights.","answer":"loup"},
     {"fr":"Il a une voix rauque et une pilosité respectable.","en":"He has a raspy voice and respectable body hair.","answer":"deux"},
