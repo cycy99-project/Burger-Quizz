@@ -80,7 +80,7 @@ const SOP_BANK = [
     {"fr":"Peut être bloqué sans prévenir.","en":"Can get blocked without warning.","answer":"deux"},
     {"fr":"Si je dis « j'ai du tracas jusqu'au cou », c'est que j'ai besoin de… ?","en":"If I say 'I'm up to my neck in troubles', what do I need?","answer":"toilettes"},
     {"fr":"Il y a parfois des fuites.","en":"There are sometimes leaks.","answer":"deux"}
-  ], theme: "Toile, Toiles, Internet & Horreur" },
+  ], theme: "Internet" },
   { type: "classement", fr: "Loup-Garou, Garou ou les deux ?", en: "Werewolf, Garou (the singer) or both?", options: [{"key":"loup","fr":"Loup-Garou","en":"Werewolf"},{"key":"garou","fr":"Garou","en":"Garou"},{"key":"deux","fr":"Les deux","en":"Both"}], items: [
     {"fr":"On ne l'entend hurler que les soirs de pleine lune.","en":"You only hear him howl on full-moon nights.","answer":"loup"},
     {"fr":"Il a une voix rauque et une pilosité respectable.","en":"He has a raspy voice and respectable body hair.","answer":"deux"},
@@ -99,7 +99,7 @@ const SOP_BANK = [
     {"fr":"Il est philanthrope.","en":"He is a philanthropist.","answer":"garou"},
     {"fr":"Il laisse toujours des traces.","en":"He always leaves traces.","answer":"deux"},
     {"fr":"C'est un homme simple le jour, comme vous et moi.","en":"He's a simple man by day, just like you and me.","answer":"deux"}
-  ], theme: "Toile, Toiles, Internet & Horreur" },
+  ], theme: "Halloween" },
   { type: "classement", fr: "Hercule Poirot, Poireau ou les deux ?", en: "Hercule Poirot, Leek or both?", options: [{"key":"poirot","fr":"Hercule Poirot","en":"Hercule Poirot"},{"key":"poireau","fr":"Poireau","en":"Leek"},{"key":"deux","fr":"Les deux","en":"Both"}], items: [
     {"fr":"Est obsédé par la symétrie.","en":"Is obsessed with symmetry.","answer":"poirot"},
     {"fr":"Pousse en rangs bien droits.","en":"Grows in neat, straight rows.","answer":"poireau"},
