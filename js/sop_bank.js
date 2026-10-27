@@ -180,5 +180,38 @@ const SOP_BANK = [
     {"fr":"Promet d'arrêter le sucre, le tabac et les écrans.","en":"Promises to quit sugar, tobacco and screens.","answer":"resolution"},
     {"fr":"Donne mal à la tête le lendemain.","en":"Gives you a headache the next day.","answer":"champagne"},
     {"fr":"Se fait avec le sourire… et s'oublie avec le même.","en":"Is made with a smile… and forgotten with one too.","answer":"resolution"}
-  ], theme: "Noël & Saint-Sylvestre" }
+  ], theme: "Noël & Saint-Sylvestre" },
+  { type: "classement", fr: "Fantôme, Citrouille ou les deux ?", en: "Ghost, Pumpkin or both?", options: [{"key":"fantome","fr":"Fantôme","en":"Ghost"},{"key":"citrouille","fr":"Citrouille","en":"Pumpkin"},{"key":"deux","fr":"Les deux","en":"Both"}], items: [
+    {"fr":"Est creusée avant le grand soir.","en":"Gets hollowed out before the big night.","answer":"citrouille"},
+    {"fr":"Dit « Bouh ! ».","en":"Says 'Boo!'.","answer":"fantome"},
+    {"fr":"Est souvent orange.","en":"Is often orange.","answer":"citrouille"},
+    {"fr":"Brille dans le noir.","en":"Glows in the dark.","answer":"deux"},
+    {"fr":"A deux trous à la place des yeux.","en":"Has two holes where the eyes should be.","answer":"deux"},
+    {"fr":"Traverse les murs.","en":"Walks through walls.","answer":"fantome"},
+    {"fr":"Finit en soupe.","en":"Ends up as soup.","answer":"citrouille"},
+    {"fr":"Se fabrique avec un vieux drap pour 0 €.","en":"Can be made from an old sheet for €0.","answer":"fantome"},
+    {"fr":"Fait peur aux enfants… jusqu'à ce qu'ils voient les bonbons.","en":"Scares kids… until they spot the sweets.","answer":"deux"},
+    {"fr":"Décore le perron des voisins.","en":"Decorates the neighbours' porch.","answer":"citrouille"},
+    {"fr":"Hante un vieux château.","en":"Haunts an old castle.","answer":"fantome"},
+    {"fr":"Fait une très bonne tarte.","en":"Makes a very good pie.","answer":"citrouille"},
+    {"fr":"Disparaît le 1er novembre au matin.","en":"Disappears on the morning of November 1st.","answer":"deux"},
+    {"fr":"Se prend en photo pour Instagram.","en":"Gets photographed for Instagram.","answer":"deux"},
+    {"fr":"Est creux(se).","en":"Is hollow.","answer":"deux","note_fr":"Comme certaines conversations de réveillon.","note_en":"Like some family-dinner conversations."}
+  ], theme: "Halloween" },
+  { type: "classement", fr: "Vampire, Zombie ou les deux ?", en: "Vampire, Zombie or both?", options: [{"key":"vampire","fr":"Vampire","en":"Vampire"},{"key":"zombie","fr":"Zombie","en":"Zombie"},{"key":"deux","fr":"Les deux","en":"Both"}], items: [
+    {"fr":"Dort dans un cercueil.","en":"Sleeps in a coffin.","answer":"vampire"},
+    {"fr":"Marche les bras tendus en grognant.","en":"Walks with arms outstretched, groaning.","answer":"zombie"},
+    {"fr":"Est un mort-vivant.","en":"Is one of the living dead.","answer":"deux"},
+    {"fr":"Craint l'ail.","en":"Fears garlic.","answer":"vampire"},
+    {"fr":"Cherche à te mordre.","en":"Is trying to bite you.","answer":"deux"},
+    {"fr":"Rêve de cerveaux.","en":"Dreams of brains.","answer":"zombie"},
+    {"fr":"Porte une cape.","en":"Wears a cape.","answer":"vampire"},
+    {"fr":"Ne dit rien d'autre que « Grrrh ».","en":"Says nothing but 'Grrrh'.","answer":"zombie"},
+    {"fr":"Se transforme en chauve-souris.","en":"Turns into a bat.","answer":"vampire"},
+    {"fr":"Ne se reflète pas dans le miroir.","en":"Casts no reflection in the mirror.","answer":"vampire"},
+    {"fr":"Se propage par morsure, comme une mauvaise rumeur.","en":"Spreads by biting, like a bad rumour.","answer":"deux"},
+    {"fr":"A l'air de sortir d'un lundi matin sans café.","en":"Looks like they've just had a Monday morning without coffee.","answer":"zombie"},
+    {"fr":"A le teint pâle.","en":"Has a pale complexion.","answer":"deux"},
+    {"fr":"Fait un carton dans les séries et les films.","en":"Is a smash hit in series and films.","answer":"deux"}
+  ], theme: "Halloween" }
 ];
